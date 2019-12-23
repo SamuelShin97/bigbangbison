@@ -1,7 +1,7 @@
 ﻿/*
     Herd.cs
     Caetano 
-    12/22/19
+    12/23/19
     Caetano
     Class for bison behavior
     Functions in file:
@@ -69,18 +69,22 @@ public class Herd : MonoBehaviour
         {
             List<Transform> context = GetNearbyObjects(agent);
 
-            agent.GetComponentInChildren<MeshRenderer>().material.color = Color.Lerp(Color.white, Color.red, context.Count / 8f);
-            //Vector3 move = behavior.CalculateMove(agent, context, this);
-            //move *= driveFactor;
-            //if (move.sqrMagnitude > squareMaxSpeed) move = move.normalized * maxSpeed;
-            //agent.Move(move);
+            Vector3 move = behavior.CalculateMove(agent, context, this);
+            move *= driveFactor;
+            if (move.sqrMagnitude > squareMaxSpeed) move = move.normalized * maxSpeed;
+            agent.Move(move);
+
+            // colors crowded bison
+            // agent.GetComponentInChildren<MeshRenderer>().material.color = Color.Lerp(Color.white, Color.red, context.Count / 8f);
         }
     }
 
     List<Transform> GetNearbyObjects(HerdAgent agent)
     {
+        int layerMask = ~(1 << 10); // used to ignore objects in layer 10
+
         List<Transform> context = new List<Transform>();
-        Collider[] contextColliders = Physics.OverlapSphere(agent.transform.position, neighborRadius);
+        Collider[] contextColliders = Physics.OverlapSphere(agent.transform.position, neighborRadius, layerMask);
         foreach (Collider c in contextColliders)
         {
             if (c != agent.AgentCollider)
