@@ -1,7 +1,7 @@
 ﻿/*
     HerdAgent.cs
     Caetano 
-    12/22/19
+    12/23/19
     Caetano
     Class for individual bison
     Functions in file:
@@ -16,6 +16,12 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class HerdAgent : MonoBehaviour
 {
+    Herd agentHerd;
+    public Herd AgentHerd
+    {
+        get { return agentHerd; }
+    }
+
     Collider agentCollider;
     public Collider AgentCollider {
         get { return agentCollider; }
@@ -27,10 +33,9 @@ public class HerdAgent : MonoBehaviour
         agentCollider = GetComponent<Collider>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Initialize(Herd herd)
     {
-        
+        agentHerd = herd;
     }
 
     public void Move(Vector3 velocity)

@@ -1,5 +1,5 @@
 ﻿/*
-    CohesionBehavior.cs
+    SteeredCohesionBehavior.cs
     Caetano 
     12/24/19
     Caetano
@@ -13,9 +13,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Herd/Behavior/Cohesion")]
-public class CohesionBehavior : FilteredHerdBehavior
+[CreateAssetMenu(menuName = "Herd/Behavior/SteeredCohesion")]
+public class SteeredCohesionBehavior : FilteredHerdBehavior
 {
+
+    Vector3 currentVelocity;
+    
+    [Range(0f, 5f)]
+    public float agentSmoothTime = 0.5f;
+
     public override Vector3 CalculateMove(HerdAgent agent, List<Transform> context, Herd herd)
     {
         // if no neighbors return no adjustment
@@ -32,6 +38,7 @@ public class CohesionBehavior : FilteredHerdBehavior
 
         // create offset from agent position, the actual move of the agent
         cohesionMove -= agent.transform.position;
+        cohesionMove = Vector3.SmoothDamp(agent.transform.forward, cohesionMove, ref currentVelocity, agentSmoothTime);
 
         return cohesionMove;
     }

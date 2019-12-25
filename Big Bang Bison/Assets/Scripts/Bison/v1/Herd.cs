@@ -1,7 +1,7 @@
 ﻿/*
     Herd.cs
     Caetano 
-    12/23/19
+    12/24/19
     Caetano
     Class for bison behavior
     Functions in file:
@@ -58,6 +58,7 @@ public class Herd : MonoBehaviour
                 transform
                 );
             newAgent.name = "Bison " + i;
+            newAgent.Initialize(this);
             agents.Add(newAgent);
         }
     }

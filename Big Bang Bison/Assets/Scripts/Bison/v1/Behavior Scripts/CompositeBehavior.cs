@@ -1,4 +1,15 @@
-﻿using System.Collections;
+﻿/*
+    CompositeBehavior.cs
+    Caetano 
+    12/23/19
+    Caetano
+    Abstract class for functions used in other bison related scripts
+    Functions in file:
+        CalculateMove: In, agent, context, herd - Out, bison move towards their neighbors
+    Any Global variables referenced in the file
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -32,11 +43,12 @@ public class CompositeBehavior : HerdBehavior
                     partialMove.Normalize();
                     partialMove *= weights[i];
                 }
-
+                
                 move += partialMove;
             }
         }
 
+        move.y = 0;
         return move;
     }
 }

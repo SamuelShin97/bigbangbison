@@ -1,7 +1,7 @@
 ﻿/*
     AvoidanceBehavior.cs
     Caetano 
-    12/23/19
+    12/24/19
     Caetano
     Abstract class for functions used in other bison related scripts
     Functions in file:
@@ -14,7 +14,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Herd/Behavior/Avoidance")]
-public class AvoidanceBehavior : HerdBehavior
+public class AvoidanceBehavior : FilteredHerdBehavior
 {
     public override Vector3 CalculateMove(HerdAgent agent, List<Transform> context, Herd herd)
     {
@@ -25,7 +25,8 @@ public class AvoidanceBehavior : HerdBehavior
         Vector3 avoidanceMove = Vector3.zero;
         int nAvoid = 0;
 
-        foreach (Transform item in context)
+        List<Transform> filterContext = (filter == null) ? context : filter.Filter(agent, context);
+        foreach (Transform item in filterContext)
         {
             if (Vector3.SqrMagnitude(item.position - agent.transform.position) < herd.SquareAvoidanceRadius)
             {

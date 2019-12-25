@@ -1,7 +1,7 @@
 ﻿/*
     AlignmentBehavior.cs
     Caetano 
-    12/23/19
+    12/24/19
     Caetano
     Abstract class for functions used in other bison related scripts
     Functions in file:
@@ -14,7 +14,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Herd/Behavior/Alignment")]
-public class AlignmentnBehavior : HerdBehavior
+public class AlignmentBehavior : FilteredHerdBehavior
 {
     public override Vector3 CalculateMove(HerdAgent agent, List<Transform> context, Herd herd)
     {
@@ -23,7 +23,8 @@ public class AlignmentnBehavior : HerdBehavior
 
         // add all points together and average
         Vector3 alignmentMove = Vector3.zero;
-        foreach (Transform item in context)
+        List<Transform> filterContext = (filter == null) ? context : filter.Filter(agent, context);
+        foreach (Transform item in filterContext)
         {
             alignmentMove += item.transform.forward;
         }
