@@ -1,12 +1,12 @@
 ﻿/*
     AlignmentBehavior.cs
     Caetano 
-    12/24/19
+    12/26/19
     Caetano
-    Abstract class for functions used in other bison related scripts
+    Class for alignment behavior object
     Functions in file:
-        CalculateMove: In, agent, context, herd - Out, poop
-    Any Global variables referenced in the file
+        CalculateMove: In, agent, context, herd - Out, the vector to face towards
+    
 */
 
 using System.Collections;
@@ -18,17 +18,17 @@ public class AlignmentBehavior : FilteredHerdBehavior
 {
     public override Vector3 CalculateMove(HerdAgent agent, List<Transform> context, Herd herd)
     {
-        // if no neighbors maintain current adjustment
+        // if no neighbors, maintain current alignment
         if (context.Count == 0) return agent.transform.forward;
 
-        // add all points together and average
+        // add all neighbor's alignment together and average
         Vector3 alignmentMove = Vector3.zero;
-        List<Transform> filterContext = (filter == null) ? context : filter.Filter(agent, context);
+        List<Transform> filterContext = (filter == null) ? context : filter.Filter(agent, context); // this is a filtered behavior
         foreach (Transform item in filterContext)
         {
-            alignmentMove += item.transform.forward;
+            alignmentMove += item.transform.forward; // add the facing direction
         }
-        alignmentMove /= context.Count; // cohesionMove is now the transform of the destination
+        alignmentMove /= context.Count; // average, alignmentMove is now the destination alignment
 
         return alignmentMove;
     }

@@ -1,23 +1,24 @@
 ﻿/*
     CompositeBehavior.cs
     Caetano 
-    12/23/19
+    12/26/19
     Caetano
-    Abstract class for functions used in other bison related scripts
+    Class for CompositeBehavior object
     Functions in file:
-        CalculateMove: In, agent, context, herd - Out, bison move towards their neighbors
-    Any Global variables referenced in the file
+        CalculateMove: In, agent, context, herd - Out, bison move according to multiple behaviors
+    
 */
 
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// This behavior is the one attatched to herds
 [CreateAssetMenu(menuName = "Herd/Behavior/Composite")]
 public class CompositeBehavior : HerdBehavior
 {
-    public HerdBehavior[] behaviors;
-    public float[] weights;
+    public HerdBehavior[] behaviors; // the behaviors for this herd
+    public float[] weights; // the weights of those behaviors
 
     public override Vector3 CalculateMove(HerdAgent agent, List<Transform> context, Herd herd)
     {
@@ -34,11 +35,11 @@ public class CompositeBehavior : HerdBehavior
         // iterate through behaviors
         for (int i = 0; i < behaviors.Length; i++)
         {
-            Vector3 partialMove = behaviors[i].CalculateMove(agent, context, herd) * weights[i];
+            Vector3 partialMove = behaviors[i].CalculateMove(agent, context, herd) * weights[i]; // do a behavior
 
             if (partialMove != Vector3.zero)
             {
-                if (partialMove.sqrMagnitude > weights[i] * weights[i])
+                if (partialMove.sqrMagnitude > weights[i] * weights[i]) // the weight caps the magnitude of each behavior
                 {
                     partialMove.Normalize();
                     partialMove *= weights[i];
@@ -48,7 +49,7 @@ public class CompositeBehavior : HerdBehavior
             }
         }
 
-        move.y = 0;
+        move.y = 0; // bison don't jump on their own
         return move;
     }
 }

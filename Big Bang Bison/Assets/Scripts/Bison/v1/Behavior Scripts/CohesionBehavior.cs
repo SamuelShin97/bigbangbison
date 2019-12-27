@@ -1,12 +1,13 @@
 ﻿/*
     CohesionBehavior.cs
     Caetano 
-    12/24/19
+    12/26/19
     Caetano
-    Abstract class for functions used in other bison related scripts
+    Class for Cohesion behavior object
     Functions in file:
-        CalculateMove: In, agent, context, herd - Out, bison move towards their neighbors
-    Any Global variables referenced in the file
+        CalculateMove: In, agent, context, herd - Out, movement towards the center of neighbors
+    
+    Note: you probably want steered cohesion
 */
 
 using System.Collections;
@@ -23,12 +24,12 @@ public class CohesionBehavior : FilteredHerdBehavior
 
         // add all points together and average
         Vector3 cohesionMove = Vector3.zero;
-        List<Transform> filterContext = (filter == null) ? context : filter.Filter(agent, context);
+        List<Transform> filterContext = (filter == null) ? context : filter.Filter(agent, context); // this is a filtered behavior
         foreach (Transform item in filterContext)
         {
             cohesionMove += item.position;
         }
-        cohesionMove /= context.Count; // cohesionMove is now the transform of the destination
+        cohesionMove /= context.Count; // average, cohesionMove is now the transform of the destination
 
         // create offset from agent position, the actual move of the agent
         cohesionMove -= agent.transform.position;

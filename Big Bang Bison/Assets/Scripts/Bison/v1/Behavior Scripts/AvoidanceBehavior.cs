@@ -1,12 +1,12 @@
 ﻿/*
     AvoidanceBehavior.cs
     Caetano 
-    12/24/19
+    12/26/19
     Caetano
-    Abstract class for functions used in other bison related scripts
+    Class for avoidance behavior object
     Functions in file:
-        CalculateMove: In, agent, context, herd - Out, bison move towards their neighbors
-    Any Global variables referenced in the file
+        CalculateMove: In, agent, context, herd - Out, the movement vector
+    
 */
 
 using System.Collections;
@@ -25,20 +25,17 @@ public class AvoidanceBehavior : FilteredHerdBehavior
         Vector3 avoidanceMove = Vector3.zero;
         int nAvoid = 0;
 
-        List<Transform> filterContext = (filter == null) ? context : filter.Filter(agent, context);
+        List<Transform> filterContext = (filter == null) ? context : filter.Filter(agent, context); // this is a filtered behavior
         foreach (Transform item in filterContext)
         {
-            if (Vector3.SqrMagnitude(item.position - agent.transform.position) < herd.SquareAvoidanceRadius)
+            if (Vector3.SqrMagnitude(item.position - agent.transform.position) < herd.SquareAvoidanceRadius) // if the distance to the item is within the avoidance radius
             {
                 nAvoid++;
-                avoidanceMove += agent.transform.position - item.position;
+                avoidanceMove += agent.transform.position - item.position; // add vector pointing away from item
             }
         }
 
-        if (nAvoid > 0) avoidanceMove /= nAvoid; // cohesionMove is now the transform of the destination
-
-        // create offset from agent position, the actual move of the agent
-        //avoidanceMove -= agent.transform.position;
+        if (nAvoid > 0) avoidanceMove /= nAvoid; // average, avoidanceMove is now the transform of the destination
 
         return avoidanceMove;
     }

@@ -15,6 +15,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// This would've be called the Bison class if that didn't fit the naming convention, the class for individual bison
 [RequireComponent(typeof(Collider))]
 public class HerdAgent : MonoBehaviour
 {

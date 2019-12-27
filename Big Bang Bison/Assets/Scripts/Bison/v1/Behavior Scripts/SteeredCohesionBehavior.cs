@@ -1,12 +1,12 @@
 ﻿/*
     SteeredCohesionBehavior.cs
     Caetano 
-    12/24/19
+    12/26/19
     Caetano
-    Abstract class for functions used in other bison related scripts
+    Class for Steered Cohesion behavior object
     Functions in file:
-        CalculateMove: In, agent, context, herd - Out, bison move towards their neighbors
-    Any Global variables referenced in the file
+        CalculateMove: In, agent, context, herd - Out, movement towards the center of neighbors
+    
 */
 
 using System.Collections;
@@ -16,8 +16,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Herd/Behavior/SteeredCohesion")]
 public class SteeredCohesionBehavior : FilteredHerdBehavior
 {
-
-    Vector3 currentVelocity;
+    Vector3 currentVelocity; // does something probably
     
     [Range(0f, 5f)]
     public float agentSmoothTime = 0.5f;
@@ -29,16 +28,16 @@ public class SteeredCohesionBehavior : FilteredHerdBehavior
 
         // add all points together and average
         Vector3 cohesionMove = Vector3.zero;
-        List<Transform> filterContext = (filter == null) ? context : filter.Filter(agent, context);
+        List<Transform> filterContext = (filter == null) ? context : filter.Filter(agent, context); // this is a filtered behavior
         foreach (Transform item in filterContext)
         {
             cohesionMove += item.position;
         }
-        cohesionMove /= context.Count; // cohesionMove is now the transform of the destination
+        cohesionMove /= context.Count; // average
 
         // create offset from agent position, the actual move of the agent
         cohesionMove -= agent.transform.position;
-        cohesionMove = Vector3.SmoothDamp(agent.transform.forward, cohesionMove, ref currentVelocity, agentSmoothTime);
+        cohesionMove = Vector3.SmoothDamp(agent.transform.forward, cohesionMove, ref currentVelocity, agentSmoothTime); // this is what makes this "smoothed"
 
         return cohesionMove;
     }
