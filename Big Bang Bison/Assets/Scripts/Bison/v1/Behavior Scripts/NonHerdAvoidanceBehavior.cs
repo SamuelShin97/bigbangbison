@@ -1,9 +1,9 @@
 ﻿/*
-    AvoidanceBehavior.cs
+    NonHerdAvoidanceBehavior.cs
     Caetano 
     12/27/19
     Caetano
-    Class for avoidance behavior object
+    Class for avoidance behavior object, when avoiding things other than bison
     Functions in file:
         CalculateMove: In, agent, context, herd - Out, the movement vector
     
@@ -13,9 +13,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Herd/Behavior/Bison Avoidance")]
-public class AvoidanceBehavior : FilteredHerdBehavior
+[CreateAssetMenu(menuName = "Herd/Behavior/Non Bison Avoidance")]
+public class NonHerdAvoidanceBehavior : FilteredHerdBehavior
 {
+    [Range(0f, 20f)]
+    public float radius = 20;
+
     public override Vector3 CalculateMove(HerdAgent agent, List<Transform> context, Herd herd)
     {
         // if no neighbors return no adjustment
@@ -26,16 +29,13 @@ public class AvoidanceBehavior : FilteredHerdBehavior
         int nAvoid = 0;
 
         List<Transform> filterContext = (filter == null) ? context : filter.Filter(agent, context); // this is a filtered behavior
-
-        // if no filtered neighbors return no adjustment
-        if (filterContext.Count == 0) return Vector3.zero;
-
         foreach (Transform item in filterContext)
         {
-            if (Vector3.SqrMagnitude(item.position - agent.transform.position) < herd.SquareAvoidanceRadius) // if the distance to the item is within the avoidance radius
+            Vector3 dist = item.position - agent.transform.position;
+            if (Vector3.SqrMagnitude(dist) < radius * radius) // if the distance to the item is within the avoidance radius
             {
                 nAvoid++;
-                avoidanceMove += agent.transform.position - item.position; // add vector pointing away from item
+                avoidanceMove += (agent.transform.position - item.position).normalized * (herd.neighborRadius / (dist.magnitude * dist.magnitude)); // add vector pointing away from item
             }
         }
 

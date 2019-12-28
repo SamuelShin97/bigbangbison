@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 5ce1e1e89f4e5e44ea6dc47a936492c2, type: 3}
   m_Name: Same Herd Filter
   m_EditorClassIdentifier: Assembly-CSharp::SameHerdFilter

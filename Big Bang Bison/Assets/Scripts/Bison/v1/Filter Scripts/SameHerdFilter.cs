@@ -19,7 +19,7 @@ public class SameHerdFilter : ContextFilter
     // Looks at  all objects in the original context, then returns a new list with only the filtered objects
     public override List<Transform> Filter(HerdAgent agent, List<Transform> original)
     {
-        List<Transform> filtered = new List<Transform>(); // list ro return
+        List<Transform> filtered = new List<Transform>(); // list to return
 
         foreach (Transform item in original)
         {

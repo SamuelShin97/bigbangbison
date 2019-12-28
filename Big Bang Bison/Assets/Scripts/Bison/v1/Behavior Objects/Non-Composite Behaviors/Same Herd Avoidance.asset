@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71edc8e075d3be74fb0cd7709fdc8006, type: 3}
-  m_Name: Obstacle Layer Filter
-  m_EditorClassIdentifier: Assembly-CSharp::PhysicsLayerFilter
-  mask:
-    serializedVersion: 2
-    m_Bits: 512
+  m_Script: {fileID: 11500000, guid: 1c15c8b9977414b479de3c2618ab97a3, type: 3}
+  m_Name: Same Herd Avoidance
+  m_EditorClassIdentifier: 
+  filter: {fileID: 11400000, guid: 82258c2ac8c86ad45a7a792dc339975a, type: 2}

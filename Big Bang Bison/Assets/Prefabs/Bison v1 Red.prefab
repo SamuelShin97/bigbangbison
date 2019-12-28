@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6198097799217260681}
   - component: {fileID: 7253091281021556575}
   - component: {fileID: 486288336144197908}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,8 +102,8 @@ GameObject:
   - component: {fileID: 5713526846255075969}
   - component: {fileID: 5713526846255075975}
   - component: {fileID: 9087145828552782380}
-  m_Layer: 0
-  m_Name: Bison v1
+  m_Layer: 12
+  m_Name: Bison v1 Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 5713526847677802919}
   - component: {fileID: 5713526847677802918}
   - component: {fileID: 5713526847677802917}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bison Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}

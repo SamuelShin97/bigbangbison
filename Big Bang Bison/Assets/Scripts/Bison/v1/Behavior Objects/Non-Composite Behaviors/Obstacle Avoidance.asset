@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71edc8e075d3be74fb0cd7709fdc8006, type: 3}
-  m_Name: Obstacle Layer Filter
-  m_EditorClassIdentifier: Assembly-CSharp::PhysicsLayerFilter
-  mask:
-    serializedVersion: 2
-    m_Bits: 512
+  m_Script: {fileID: 11500000, guid: 502cc1a01165c374b81e69e334d32dc4, type: 3}
+  m_Name: Obstacle Avoidance
+  m_EditorClassIdentifier: 
+  filter: {fileID: 11400000, guid: d096749dd6a251c4f83f8e53801cd9f2, type: 2}
+  radius: 3

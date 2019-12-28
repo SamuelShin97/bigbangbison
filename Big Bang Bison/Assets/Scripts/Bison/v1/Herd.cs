@@ -1,11 +1,12 @@
 ﻿/*
     Herd.cs
     Caetano 
-    12/24/19
+    12/27/19
     Caetano
     Class for bison behavior
     Functions in file:
         GetNearbyObjects: In, agent - Out, list of nearby objects not ignored by bison
+        .SquareAvoidanceRadius: Out, the square of the avoidance radius
     
 */
 
@@ -31,11 +32,11 @@ public class Herd : MonoBehaviour
     const float DENSITY = 0.2f;
 
     // These variables affect the behaviors in the herd
-    [Range(1f, 100f)]
-    public float driveFactor = 10f; // increases the intensity of behaviors
+    [Range(0f, 20f)]
+    public float driveFactor = 4f; // increases the intensity of behaviors
     [Range(1f, 100f)]
     public float maxSpeed = 5f; // the max speed
-    [Range(1f, 10f)]
+    [Range(1f, 20f)]
     public float neighborRadius = 1.5f; // how close something has to be to be detected as a neighbor
     [Range(0f, 1f)]
     public float avoidanceRadiusMultiplier = 0.5f; // the radius for agents to avoid things, relative to neighborRadius
