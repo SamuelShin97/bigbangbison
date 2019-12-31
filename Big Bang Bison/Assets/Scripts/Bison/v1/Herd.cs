@@ -25,7 +25,7 @@ public class Herd : MonoBehaviour
     List<HerdAgent> agents = new List<HerdAgent>(); // it starts empty
 
     // The number of agents to spawn in this herd
-    [Range(10, 500)]
+    [Range(1, 500)]
     public int startingCount = 200; // defaults to 200
 
     // A constant, this could be changed. Smaller number = tighter group spawned

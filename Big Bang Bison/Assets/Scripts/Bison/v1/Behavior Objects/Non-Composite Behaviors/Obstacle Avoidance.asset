@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Obstacle Avoidance
   m_EditorClassIdentifier: 
   filter: {fileID: 11400000, guid: d096749dd6a251c4f83f8e53801cd9f2, type: 2}
-  radius: 3
+  radius: 5
