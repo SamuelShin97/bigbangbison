@@ -24,7 +24,6 @@ public class HillInteraction : MonoBehaviour
 
     IEnumerator OnTriggerEnter(Collider other)
     {
-        Debug.Log("triggered");
         if (other.CompareTag("Hill"))
         {
             Debug.Log("inside hill");
