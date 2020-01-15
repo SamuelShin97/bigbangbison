@@ -181,8 +181,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63031cb3e2a79ae41b395c189f06df05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mediumSize: 5
-  largeSize: 15
+  mediumSize: 2
+  largeSize: 4
 --- !u!114 &279289693835071020
 MonoBehaviour:
   m_ObjectHideFlags: 0
