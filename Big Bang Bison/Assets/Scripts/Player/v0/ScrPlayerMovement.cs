@@ -78,10 +78,10 @@ public class ScrPlayerMovement : MonoBehaviour
         hspeed = Mathf.Lerp(hspeed, hspeedDest, speedIncr);
         vspeed = Mathf.Lerp(vspeed, vspeedDest, speedIncr);
 
-        if (scoreKeeper.GetComponent<ScrKeepScore>().gameover) {
-            hspeed = 0;
-            vspeed = 0;
-        }
+        //if (scoreKeeper.GetComponent<ScrKeepScore>().gameover) {
+        //    hspeed = 0;
+        //    vspeed = 0;
+        //}
 
         transform.position = new Vector3(transform.position.x + hspeed, transform.position.y, transform.position.z + vspeed);
     }

@@ -1,21 +1,32 @@
 ﻿/*
     HerdAgent.cs
     Caetano 
-    12/22/19
+    12/24/19
     Caetano
     Class for individual bison
     Functions in file:
-        CalculateMove: In, agent, context, herd - Out, poop
-    Any Global variables referenced in the file
+        .AgentHerd: Out, the herd this is in
+        .AgentCollider: Out, this' collider
+        .Move: In, velocity - Out, moves this
+    
 */
 
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// This would've be called the Bison class if that didn't fit the naming convention, the class for individual bison
 [RequireComponent(typeof(Collider))]
 public class HerdAgent : MonoBehaviour
 {
+    // Return my herd
+    Herd agentHerd;
+    public Herd AgentHerd
+    {
+        get { return agentHerd; }
+    }
+
+    // Return my collider
     Collider agentCollider;
     public Collider AgentCollider {
         get { return agentCollider; }
@@ -24,18 +35,19 @@ public class HerdAgent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        agentCollider = GetComponent<Collider>();
+        agentCollider = GetComponent<Collider>(); // save my collider
     }
 
-    // Update is called once per frame
-    void Update()
+    // Called once when created
+    public void Initialize(Herd herd)
     {
-        
+        agentHerd = herd; // save my herd
     }
 
+    // Move it
     public void Move(Vector3 velocity)
     {
-        transform.forward = velocity;
-        transform.position += velocity * Time.deltaTime;
+        transform.forward = velocity; // face this direction
+        transform.position += velocity * Time.deltaTime; // move this direction
     }
 }
