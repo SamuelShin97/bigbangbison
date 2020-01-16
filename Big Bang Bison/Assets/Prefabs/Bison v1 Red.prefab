@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1405438269742959960}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.154}
+  m_LocalPosition: {x: 0, y: 0.7, z: 1.45}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 5713526846255075969}
@@ -104,9 +104,10 @@ GameObject:
   - component: {fileID: 9087145828552782380}
   - component: {fileID: 4212603203105011520}
   - component: {fileID: 4592427485065679789}
+  - component: {fileID: 4984963849698700977}
   m_Layer: 12
   m_Name: Bison v1 Red
-  m_TagString: Untagged
+  m_TagString: RedBison
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151,7 +152,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.8, y: 1, z: 2.4}
-  m_Center: {x: 0, y: 0, z: 0.3}
+  m_Center: {x: 0, y: 0.7, z: 0.3}
 --- !u!114 &4212603203105011520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,6 +167,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mediumSize: 2
   largeSize: 4
+  isMedium: 0
+  isLarge: 0
 --- !u!54 &4592427485065679789
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -182,6 +185,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &4984963849698700977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5713526846255075974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a95475663620c9a469c5e3a32a6c98f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BlueText: {fileID: 1345885783946969260, guid: 63a659967b8e8b840bc1efb335511c09,
+    type: 3}
+  RedText: {fileID: 9108838090021006370, guid: 530ce9954c30b654891750506ba8ac39, type: 3}
 --- !u!1 &5713526847677802923
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,8 +227,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5713526847677802923}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 1, z: 1.8}
+  m_LocalPosition: {x: 0, y: 0.7, z: 0}
+  m_LocalScale: {x: 1, y: 1.4, z: 2.5}
   m_Children: []
   m_Father: {fileID: 5713526846255075969}
   m_RootOrder: 0
