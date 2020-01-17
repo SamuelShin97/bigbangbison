@@ -215,9 +215,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a95475663620c9a469c5e3a32a6c98f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BlueText: {fileID: 1345885783946969260, guid: 63a659967b8e8b840bc1efb335511c09,
+  blueText: {fileID: 1345885783946969260, guid: 63a659967b8e8b840bc1efb335511c09,
     type: 3}
-  RedText: {fileID: 9108838090021006370, guid: 530ce9954c30b654891750506ba8ac39, type: 3}
+  redText: {fileID: 9108838090021006370, guid: 530ce9954c30b654891750506ba8ac39, type: 3}
 --- !u!1 &5713526847677802923
 GameObject:
   m_ObjectHideFlags: 0

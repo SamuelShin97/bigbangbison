@@ -780,8 +780,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ba466db43ba314a94d10ffd6d863d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BlueText: {fileID: 952597976}
-  RedText: {fileID: 1609840494}
+  blueText: {fileID: 952597976}
+  redText: {fileID: 1609840494}
   bluePoints: 0
   redPoints: 0
 --- !u!1 &237149077
@@ -1282,7 +1282,6 @@ GameObject:
   - component: {fileID: 450349507}
   - component: {fileID: 450349506}
   - component: {fileID: 450349505}
-  - component: {fileID: 450349509}
   m_Layer: 0
   m_Name: SendOffPoint
   m_TagString: Send
@@ -1363,19 +1362,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &450349509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 450349504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5c9268a976c9fa438704c8df2e5db21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ps: {fileID: 1477759459}
 --- !u!1 &477359230
 GameObject:
   m_ObjectHideFlags: 0
@@ -4618,6 +4604,7 @@ GameObject:
   - component: {fileID: 1477759457}
   - component: {fileID: 1477759459}
   - component: {fileID: 1477759458}
+  - component: {fileID: 1477759460}
   m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
@@ -4784,7 +4771,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 3
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -4837,7 +4824,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 36.548965
+      scalar: 80
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -4891,7 +4878,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0, g: 0.36750412, b: 1, a: 1}
+      maxColor: {r: 0.885502, g: 0.9033658, b: 0.9339623, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -9305,6 +9292,27 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &1477759460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477759456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5c9268a976c9fa438704c8df2e5db21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isBlue: 0
+  active: 0
+  medium: 0
+  mediumEmissionRate: 80
+  largeEmissionRate: 200
+  blueBison: {fileID: 5713526846255075974, guid: ab76dbf38c1b423429cf2c40e3905398,
+    type: 3}
+  redBison: {fileID: 5713526846255075974, guid: d304b421a0dc4d8468b3db73d4160169,
+    type: 3}
 --- !u!1 &1498864653
 GameObject:
   m_ObjectHideFlags: 0

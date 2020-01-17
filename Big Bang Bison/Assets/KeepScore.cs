@@ -5,16 +5,16 @@ using UnityEngine.UI;
 
 public class KeepScore : MonoBehaviour
 {
-    public Text BlueText;
-    public Text RedText;
+    public Text blueText;
+    public Text redText;
     public int bluePoints;
     public int redPoints;
     
     // Start is called before the first frame update
     void Start()
     {
-        BlueText.text = "Blue Points: 0";
-        RedText.text = "Red Points: 0";
+        blueText.text = "Blue Points: 0";
+        redText.text = "Red Points: 0";
         bluePoints = 0;
         redPoints = 0;
     }
@@ -22,7 +22,7 @@ public class KeepScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        BlueText.text = "Blue Points: " + bluePoints.ToString();
-        RedText.text = "Red Points: " + redPoints.ToString();
+        blueText.text = "Blue Points: " + bluePoints.ToString();
+        redText.text = "Red Points: " + redPoints.ToString();
     }
 }

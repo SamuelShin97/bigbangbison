@@ -6,16 +6,18 @@ using UnityEngine.UI;
 public class ScorePoints : MonoBehaviour
 {
     private bool insideSendOff = false;
-    public Text BlueText;
-    public Text RedText;
+    public Text blueText;
+    public Text redText;
+    private bool scoreable;
     KeepScore keepScore;
     PlayParticleSystem playPS;
 
     // Start is called before the first frame update
     void Start()
     {
-        BlueText.text = "Blue Points: 0";
-        RedText.text = "Red Points: 0";
+        blueText.text = "Blue Points: 0";
+        redText.text = "Red Points: 0";
+        scoreable = true;
         keepScore = FindObjectOfType<KeepScore>();
         playPS = FindObjectOfType<PlayParticleSystem>();
     }
@@ -37,18 +39,21 @@ public class ScorePoints : MonoBehaviour
 
             if (insideSendOff)
             {
-                if (bison.isMedium)
+                if (bison.isMedium && scoreable)
                 {
                     //Debug.Log("scored 1 points");
                     Score(1);
-                    
-                    transform.position = new Vector3(99999, 99999, 99999);
+                    playPS.medium = true;
+                    transform.localScale = new Vector3(0, 0, 0);
+                    scoreable = false;
                 }
-                else if (bison.isLarge)
+                else if (bison.isLarge && scoreable)
                 {
                     //Debug.Log("scored 2 points");
                     Score(2);
-                    transform.position = new Vector3(99999, 99999, 99999);
+                    playPS.medium = false;
+                    transform.localScale = new Vector3(0, 0, 0);
+                    scoreable = false;
                 }
 
             }
@@ -73,11 +78,14 @@ public class ScorePoints : MonoBehaviour
         if (BlueOrRed() == true)
         {
             keepScore.bluePoints = keepScore.bluePoints + points;
+            playPS.isBlue = true;
         }
         else
         {
             keepScore.redPoints = keepScore.redPoints + points;
+            playPS.isBlue = false;
         }
+        playPS.active = true;
     }
 
     void OnTriggerExit(Collider other)
