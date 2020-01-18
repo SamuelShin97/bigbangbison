@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e2f06f4c31b1df44180f3e6c2430c6d9, type: 3}
-  m_Name: Same Herd SteeredCohesion
+  m_Name: Same Herd Steered
   m_EditorClassIdentifier: 
   filter: {fileID: 11400000, guid: 82258c2ac8c86ad45a7a792dc339975a, type: 2}
   agentSmoothTime: 1

@@ -32,6 +32,8 @@ public class HerdAgent : MonoBehaviour
         get { return agentCollider; }
     }
 
+    List<string> Effects;
+
     // Start is called before the first frame update
     void Start()
     {
