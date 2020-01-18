@@ -32,6 +32,9 @@ public class HerdAgent : MonoBehaviour
         get { return agentCollider; }
     }
 
+    // Any effects specific to this bison. Things like fully grown, slowed, sped up, panicking, etc... 
+    public List<string> Effects;
+
     // Start is called before the first frame update
     void Start()
     {
