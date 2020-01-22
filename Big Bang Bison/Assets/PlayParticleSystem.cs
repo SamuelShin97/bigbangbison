@@ -25,8 +25,8 @@ public class PlayParticleSystem : MonoBehaviour
         isBlue = true;
         active = false;
         medium = true;
-        blue = blueBison.GetComponentInChildren<MeshRenderer>().sharedMaterial.color;
-        red = redBison.GetComponentInChildren<MeshRenderer>().sharedMaterial.color;
+        blue = blueBison.GetComponentInChildren<SkinnedMeshRenderer>().sharedMaterial.color;
+        red = redBison.GetComponentInChildren<SkinnedMeshRenderer>().sharedMaterial.color;
     }
 
     // Update is called once per frame
