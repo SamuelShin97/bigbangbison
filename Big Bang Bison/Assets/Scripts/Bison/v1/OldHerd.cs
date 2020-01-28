@@ -15,7 +15,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // The Herd is an object that will contain and manage each HerdAgent (Bison).   Herd = Flock
-public class Herd : MonoBehaviour
+public class OldHerd : MonoBehaviour
 {
     // These two are set in the editor
     public HerdAgent agentPrefab; // The prefab used when instantiating new agents
