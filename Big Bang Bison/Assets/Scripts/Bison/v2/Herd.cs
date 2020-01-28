@@ -85,14 +85,19 @@ public class Herd : MonoBehaviour
         // Iterate through all agents and  move them
         foreach (HerdAgent agent in agents)
         {
-
+            RaycastHit ground;
             // Determine state
-            if (!Physics.Raycast(agent.transform.position, -Vector3.up, bisonHeight + 5f))
+            if (!Physics.Raycast(agent.transform.position, -Vector3.up, out ground, bisonHeight + 5f))
             {
                 Debug.Log("and I oop");
                 agent.state = 3; // Off the ground
                 agent.agentBody.drag = 1f;
                 //agent.agentBody.AddTorque(); twist?
+            } else
+            {
+                //Vector3 adjustment = Vector3.zero;
+                //adjustment.y = bisonHeight - ground.distance;
+                //agent.transform.position += adjustment;
             }
 
             if (agent.state == 3) continue; // If out of play, skip
