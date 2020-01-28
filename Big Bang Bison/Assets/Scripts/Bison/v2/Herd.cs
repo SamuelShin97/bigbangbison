@@ -34,7 +34,7 @@ public class Herd : MonoBehaviour
 
     // The maximum number of agents to spawn in this herd
     [Range(1, 200)]
-    public int startingCount = 77; // defaults to 77
+    public int startingCount = 27; // defaults to 27
 
     // These variables affect the behaviors in the herd
     [Range(0f, 20f)]
@@ -76,10 +76,7 @@ public class Herd : MonoBehaviour
             outOfPlayBehavior };// The behaviors run on each agent, sorted by state
 
         // Make all the Bison
-        for (int i = 0; i < startingCount; i++)
-        {
-            SpawnBison(20);
-        }
+        SpawnBison(startingCount);
     }
 
     // Update is called once per frame
@@ -88,18 +85,23 @@ public class Herd : MonoBehaviour
         // Iterate through all agents and  move them
         foreach (HerdAgent agent in agents)
         {
-            List<Transform> context = GetNearbyObjects(agent); // get the context
 
             // Determine state
-            if (!Physics.Raycast(agent.transform.position, -Vector3.up, bisonHeight + 0.5f))
+            if (!Physics.Raycast(agent.transform.position, -Vector3.up, bisonHeight + 5f))
             {
+                Debug.Log("and I oop");
                 agent.state = 3; // Off the ground
-                agent.agentBody.drag = 0.75f;
-            } else if (agent.state != 2)
-            {
-                agent.state = 0;
-                agent.agentBody.drag = idleDrag;
+                agent.agentBody.drag = 1f;
+                //agent.agentBody.AddTorque(); twist?
             }
+
+            if (agent.state == 3) continue; // If out of play, skip
+
+            // Reset bison to default state
+            agent.state = 0;
+            agent.agentBody.drag = idleDrag;
+
+            List<Transform> context = GetNearbyObjects(agent); // get the context, also flag if a player is near or if agent is crowded
 
             // Calculate move
             Vector3 move = behaviors[agent.state].CalculateMove(agent, context, this); // figure out how much the agent should move, and which behavior it's using
@@ -133,7 +135,7 @@ public class Herd : MonoBehaviour
             {
                 context.Add(c.transform); // add it to the context
             }
-            if (c.gameObject.layer == 11 && agent.state != 2)
+            if (c.gameObject.layer == 11 && agent.state == 0)
             {
                 agent.state = 1;
                 agent.agentBody.drag = 0;

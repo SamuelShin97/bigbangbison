@@ -10,17 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7d061cacee79144bbb7caca5ff14e45, type: 3}
-  m_Name: Default Bison Behavior
+  m_Name: PanicBehavior
   m_EditorClassIdentifier: 
   behaviors:
   - {fileID: 11400000, guid: b3c15d661e7416745874d2fe0a87ca17, type: 2}
-  - {fileID: 11400000, guid: d071378e3cba0fc45bd1545c2b6a8e9d, type: 2}
-  - {fileID: 11400000, guid: 6c37464ed4ac8984ea71f53c9de614ca, type: 2}
-  - {fileID: 11400000, guid: e07083a64e246b94990a0f5b36f9c08b, type: 2}
-  - {fileID: 11400000, guid: 903ce5b45693fe9488fa03a9dec8ca43, type: 2}
   weights:
-  - 1
-  - 0.5
   - 2
-  - 4
-  - 0.01
