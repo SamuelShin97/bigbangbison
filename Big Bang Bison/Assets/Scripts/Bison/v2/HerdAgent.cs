@@ -61,11 +61,10 @@ public class HerdAgent : MonoBehaviour
     public void Move(Vector3 velocity)
     {
         agentBody.AddForce(velocity * Time.deltaTime, ForceMode.Impulse);
-        if (agentBody.velocity.sqrMagnitude > 100)
-        {
-            agentBody.AddForce(-agentBody.velocity.normalized * (agentBody.velocity.magnitude - 10), ForceMode.Impulse);
-        }
-        if (agentBody.velocity.sqrMagnitude > 1) transform.forward = agentBody.velocity; // face this direction
-        //transform.position += velocity * Time.deltaTime; // move this direction
+        //if (agentBody.velocity.sqrMagnitude > 100)  // caps speed
+        //{
+        //    agentBody.AddForce(-agentBody.velocity.normalized * (agentBody.velocity.magnitude - 10), ForceMode.Impulse);
+        //}
+        if (agentBody.velocity.sqrMagnitude > 1) transform.forward = agentBody.velocity; // face the direction I'm moving
     }
 }

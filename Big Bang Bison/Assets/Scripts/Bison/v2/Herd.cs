@@ -40,7 +40,9 @@ public class Herd : MonoBehaviour
     [Range(0f, 20f)]
     public float driveFactor = 4f; // increases the intensity of behaviors
     [Range(0f, 1f)]
-    public float idleDrag = 0.15f; // drag while idle
+    public float idleDrag = 0.75f; // drag while idle
+    [Range(0f, 1f)]
+    public float runningDrag = 0.15f; // drag while running
     [Range(1f, 100f)]
     public float maxSpeed = 5f; // the max acceleration
     [Range(1f, 20f)]
@@ -89,15 +91,16 @@ public class Herd : MonoBehaviour
             // Determine state
             if (!Physics.Raycast(agent.transform.position, -Vector3.up, out ground, bisonHeight + 5f))
             {
-                Debug.Log("and I oop");
+                if (agent.state != 3) Debug.Log("and I oop");
                 agent.state = 3; // Off the ground
                 agent.agentBody.drag = 1f;
+                agent.agentBody.angularDrag = 0f;
                 //agent.agentBody.AddTorque(); twist?
             } else
             {
-                //Vector3 adjustment = Vector3.zero;
-                //adjustment.y = bisonHeight - ground.distance;
-                //agent.transform.position += adjustment;
+                Vector3 adjustment = Vector3.zero;
+                adjustment.y = bisonHeight + 2 - ground.distance;
+                agent.transform.position += adjustment;
             }
 
             if (agent.state == 3) continue; // If out of play, skip
@@ -131,7 +134,7 @@ public class Herd : MonoBehaviour
         if (contextColliders.Length > crowdingThreshhold) // If i'm crowded, panic
         {
             agent.state = 2;
-            agent.agentBody.drag = 0;
+            agent.agentBody.drag = 0f;
         }
 
         foreach (Collider c in contextColliders)
@@ -143,7 +146,7 @@ public class Herd : MonoBehaviour
             if (c.gameObject.layer == 11 && agent.state == 0)
             {
                 agent.state = 1;
-                agent.agentBody.drag = 0;
+                agent.agentBody.drag = runningDrag;
             }
         }
         return context;
