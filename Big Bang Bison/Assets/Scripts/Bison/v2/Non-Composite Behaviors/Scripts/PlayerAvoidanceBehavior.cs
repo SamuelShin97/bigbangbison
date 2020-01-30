@@ -32,11 +32,8 @@ public class PlayerAvoidanceBehavior : FilteredHerdBehavior
         foreach (Transform item in filterContext)
         {
             Vector3 dist = item.position - agent.transform.position;
-            if (Vector3.SqrMagnitude(dist) < radius * radius) // if the distance to the item is within the avoidance radius
-            {
-                nAvoid++;
-                avoidanceMove += (agent.transform.position - item.position).normalized * (herd.neighborRadius * herd.neighborRadius / dist.sqrMagnitude) * 70; // add vector pointing away from item
-            }
+            nAvoid++;
+            avoidanceMove += (agent.transform.position - item.position).normalized * (herd.neighborRadius * herd.neighborRadius / dist.sqrMagnitude) * 70; // add vector pointing away from item
         }
 
         if (nAvoid > 0) avoidanceMove /= nAvoid; // average, avoidanceMove is now the transform of the destination
