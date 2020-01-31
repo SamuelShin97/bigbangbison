@@ -720,7 +720,7 @@ MonoBehaviour:
   speed: 1
   winner: 
   hills: {fileID: 1084160827}
-  hillFrequency_seconds: 5
+  hillFrequency_seconds: 60
 --- !u!1 &213566800
 GameObject:
   m_ObjectHideFlags: 0
@@ -2167,6 +2167,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hill (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 943067720904324763, guid: 64903b5344f33884bba6b1903cd42e55,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64903b5344f33884bba6b1903cd42e55, type: 3}
