@@ -17,7 +17,7 @@ using UnityEngine;
 public class NonHerdAvoidanceBehavior : FilteredHerdBehavior
 {
     [Range(0f, 20f)]
-    public float radius = 20;
+    public float radius = 15;
 
     public override Vector3 CalculateMove(HerdAgent agent, List<Transform> context, Herd herd)
     {

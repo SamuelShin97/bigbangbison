@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Player Avoidance
   m_EditorClassIdentifier: 
   filter: {fileID: 11400000, guid: 7be4840a50567fd428e9625a3e904535, type: 2}
-  radius: 20
+  radius: 15
