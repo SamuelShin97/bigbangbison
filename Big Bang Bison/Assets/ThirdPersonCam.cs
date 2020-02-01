@@ -20,7 +20,8 @@ public class ThirdPersonCam : MonoBehaviour
         CamControl();
     }
     void CamControl()
-    {
+    {   
+        //Vector3 dir = new Vector3(0, 0, -distance); might need this
         if (playerNum == 1) {
             MouseX += Input.GetAxis("MouseX1") * RoatationSpeed;
             MouseY += Input.GetAxis("MouseY1") * RoatationSpeed;
