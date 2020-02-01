@@ -18,8 +18,8 @@ public class ThirdPersonController : MonoBehaviour
     }
     void PlayerMovment()
     {
-        
-        Vector3 dir = new Vector3(0,0,-distance)
+
+        Vector3 dir = new Vector3(0, 0, -distance);
 
         if (PlayerNum == 1){
             float translationX = Input.GetAxis("Vertical1");
