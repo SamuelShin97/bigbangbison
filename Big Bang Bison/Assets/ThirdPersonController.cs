@@ -10,7 +10,6 @@ public class ThirdPersonController : MonoBehaviour
     public float rotationSpeed = 100.0f;
     public int PlayerNum;
 
-
     // Update is called once per frame
     void Update()
     {
@@ -18,8 +17,6 @@ public class ThirdPersonController : MonoBehaviour
     }
     void PlayerMovment()
     {
-
-        
 
         if (PlayerNum == 1){
             float translationX = Input.GetAxis("Vertical1");
