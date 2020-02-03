@@ -5,11 +5,10 @@ using UnityEngine;
 public class ThirdPersonController : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float distance;
+    
     public float Speed = 10.0f;
     public float rotationSpeed = 100.0f;
     public int PlayerNum;
-
 
     // Update is called once per frame
     void Update()
@@ -18,8 +17,6 @@ public class ThirdPersonController : MonoBehaviour
     }
     void PlayerMovment()
     {
-
-        Vector3 dir = new Vector3(0, 0, -distance);
 
         if (PlayerNum == 1){
             float translationX = Input.GetAxis("Vertical1");
