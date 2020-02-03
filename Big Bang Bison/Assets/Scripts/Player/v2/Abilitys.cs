@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Abilitys : MonoBehaviour
 {
-    // Start is called before the first frame update
+    
     public Transform lookAt;
     public Transform camTransform;
     public float pushAmount;
@@ -13,7 +13,6 @@ public class Abilitys : MonoBehaviour
     //public float distance = 10.0f;
     public bool showGizmos = true;
 
-    // Update is called once per frame
     void Update()
     {
         if (PlayerNum == 1)
