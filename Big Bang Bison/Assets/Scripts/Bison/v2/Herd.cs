@@ -160,7 +160,7 @@ public class Herd : MonoBehaviour
         {
             Vector3 spawn = (Vector3)Random.insideUnitCircle * 100; // random point in a circle with an x and y, and a radius of 
             spawn.z = spawn.y; // we want z
-            spawn.y = 0; // not y
+            spawn.y = 2; // not y
 
             // Yo, it's a new bison
             HerdAgent newAgent = Instantiate(

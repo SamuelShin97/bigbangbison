@@ -35,8 +35,8 @@ public class PlayerMovement1 : MonoBehaviour
         }
         else
         {
-            player_horizontal = "Horizontal_Player1";
-            player_vertical = "Vertical_Player1";
+            player_horizontal = "Horizontal1";
+            player_vertical = "Vertical1";
         }
         //Debug.Log(Input.GetJoystickNames().Length);
     }

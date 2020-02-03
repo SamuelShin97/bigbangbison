@@ -1,7 +1,7 @@
 ﻿/*
     HerdAgent.cs
     Caetano 
-    1/27/19
+    1/27/20
     Caetano
     Class for individual bison
     Functions in file:
@@ -33,8 +33,9 @@ public class HerdAgent : MonoBehaviour
         get { return agentCollider; }
     }
 
-    // Save my Rigidbody
+    // Save my Rigidbody and Animator
     public Rigidbody agentBody;
+    private Animator agentAnimator;
 
     // 0 - Idle, 1 - running, 2 - panicking, 3 - Off ground
     public byte state = 0;
@@ -44,6 +45,7 @@ public class HerdAgent : MonoBehaviour
     {
         agentCollider = GetComponent<Collider>(); // save my collider
         agentBody = GetComponent<Rigidbody>();
+        agentAnimator = GetComponentInChildren<Animator>();
     }
 
     // Called once when created
@@ -54,7 +56,9 @@ public class HerdAgent : MonoBehaviour
 
     void Update()
     {
-        
+        agentAnimator.SetInteger("State", state);
+        agentAnimator.SetFloat("Speed", agentBody.velocity.magnitude);
+        if (state == 0) agentAnimator.SetFloat("Idle", Random.value);
     }
 
     // Move it
