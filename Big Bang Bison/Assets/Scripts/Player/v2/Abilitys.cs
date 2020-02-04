@@ -20,7 +20,7 @@ public class Abilitys : MonoBehaviour
             if (Input.GetButton("Push1"))
             {
                 Push();
-                print(lookAt.position);
+                //print(lookAt.position);
             }
         }
         if (PlayerNum == 2)
@@ -28,7 +28,7 @@ public class Abilitys : MonoBehaviour
             if (Input.GetButton("Push2"))
             {
                 Push();
-                print(lookAt.position);
+                //print(lookAt.position);
             }
         }
         if (PlayerNum == 3)
@@ -36,7 +36,7 @@ public class Abilitys : MonoBehaviour
             if (Input.GetButton("Push3"))
             {
                 Push();
-                print(lookAt.position);
+                //print(lookAt.position);
             }
         }
         if (PlayerNum == 4)
@@ -44,7 +44,7 @@ public class Abilitys : MonoBehaviour
             if (Input.GetButton("Push4"))
             {
                 Push();
-                print(lookAt.position);
+                //print(lookAt.position);
             }
         }
     }
@@ -55,9 +55,9 @@ public class Abilitys : MonoBehaviour
 
         foreach(Collider pushBison in colliders)
         {
-            if (pushBison.CompareTag("Bison"))
+            if (pushBison.CompareTag("RedBison") || pushBison.CompareTag("BlueBison"))
             {
-                Rigidbody pushBody = pushBison.GetComponent<Rigidbody>();
+            Rigidbody pushBody = pushBison.GetComponent<Rigidbody>();
                 pushBody.AddExplosionForce(pushAmount, lookAt.position, pushRadius);
             }
         }
