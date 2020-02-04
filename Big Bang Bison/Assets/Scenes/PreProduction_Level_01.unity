@@ -14622,6 +14622,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7284079905784582980, guid: d72efdc9889e8eb4aa5d08aabefc5947,
+        type: 3}
+      propertyPath: playerNum
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7284079906216203235, guid: d72efdc9889e8eb4aa5d08aabefc5947,
         type: 3}
       propertyPath: m_Name
@@ -18793,6 +18798,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 4300000, guid: 7a4ae1ac3314eff49b422f6f7308392d, type: 3}
+    - target: {fileID: 7284079905784582980, guid: d72efdc9889e8eb4aa5d08aabefc5947,
+        type: 3}
+      propertyPath: playerNum
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7284079905784582981, guid: d72efdc9889e8eb4aa5d08aabefc5947,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.y
@@ -28088,6 +28098,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7284079905784582980, guid: d72efdc9889e8eb4aa5d08aabefc5947,
+        type: 3}
+      propertyPath: playerNum
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7284079905784582981, guid: d72efdc9889e8eb4aa5d08aabefc5947,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.x
@@ -30014,6 +30029,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HerdPurple
+      objectReference: {fileID: 0}
+    - target: {fileID: 2673900772944978001, guid: 1b74abfe71442aa4fbce131bcb1ac77d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Bison
       objectReference: {fileID: 0}
     - target: {fileID: 2673900772944978007, guid: 1b74abfe71442aa4fbce131bcb1ac77d,
         type: 3}
@@ -41538,6 +41558,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 4300000, guid: 7a4ae1ac3314eff49b422f6f7308392d, type: 3}
+    - target: {fileID: 7284079905784582980, guid: d72efdc9889e8eb4aa5d08aabefc5947,
+        type: 3}
+      propertyPath: playerNum
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7284079905784582981, guid: d72efdc9889e8eb4aa5d08aabefc5947,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.y

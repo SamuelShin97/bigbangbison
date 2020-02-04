@@ -1202,7 +1202,7 @@ GameObject:
   - component: {fileID: 6001581696940565766}
   m_Layer: 12
   m_Name: Bison v2
-  m_TagString: Untagged
+  m_TagString: Bison
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1265,6 +1265,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mediumSize: 2
   largeSize: 3
+  isMedium: 0
+  isLarge: 0
 --- !u!114 &6001581696940565766
 MonoBehaviour:
   m_ObjectHideFlags: 0
