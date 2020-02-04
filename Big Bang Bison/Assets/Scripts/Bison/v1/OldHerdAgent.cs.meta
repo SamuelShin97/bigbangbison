@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Big Bang Bison/Assets/Scripts/Bison/v1/OldHerdAgent.cs.meta
 guid: 74df592b8090b6a468fa720ec9ac5542
+=======
+guid: 6a487356df667be40952ffde7c54d70d
+>>>>>>> 3rdPersonKeyboard:Big Bang Bison/Assets/ThirdPersonCam.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

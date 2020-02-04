@@ -131,11 +131,12 @@ public class Herd : MonoBehaviour
 
         Collider[] contextColliders = Physics.OverlapSphere(agent.transform.position, neighborRadius, layerMask); // gets all colliders near the agent
 
-        if (contextColliders.Length > crowdingThreshhold) // If i'm crowded, panic
-        {
-            agent.state = 2;
-            agent.agentBody.drag = 0f;
-        }
+        // For panicking
+        //if (contextColliders.Length > crowdingThreshhold) // If i'm crowded, panic
+        //{
+        //    agent.state = 2;
+        //    agent.agentBody.drag = 0.1f;
+        //}
 
         foreach (Collider c in contextColliders)
         {

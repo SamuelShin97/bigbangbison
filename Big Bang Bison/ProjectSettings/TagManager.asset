@@ -5,9 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Hill
-  - Send
-  - BlueBison
-  - RedBison
+  - Bison
   layers:
   - Default
   - TransparentFX
