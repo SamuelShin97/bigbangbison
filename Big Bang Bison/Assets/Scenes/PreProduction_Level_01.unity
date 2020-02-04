@@ -14787,6 +14787,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player1
       objectReference: {fileID: 0}
+    - target: {fileID: 7284079906216203244, guid: d72efdc9889e8eb4aa5d08aabefc5947,
+        type: 3}
+      propertyPath: camTransform
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7284079906216203245, guid: d72efdc9889e8eb4aa5d08aabefc5947,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18948,6 +18953,16 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 4300000, guid: 7a4ae1ac3314eff49b422f6f7308392d, type: 3}
+    - target: {fileID: 7284079905784582981, guid: d72efdc9889e8eb4aa5d08aabefc5947,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284079906216203234, guid: d72efdc9889e8eb4aa5d08aabefc5947,
+        type: 3}
+      propertyPath: PlayerNum
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7284079906216203235, guid: d72efdc9889e8eb4aa5d08aabefc5947,
         type: 3}
       propertyPath: m_Name
@@ -28233,6 +28248,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7284079905784582981, guid: d72efdc9889e8eb4aa5d08aabefc5947,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284079906216203234, guid: d72efdc9889e8eb4aa5d08aabefc5947,
+        type: 3}
+      propertyPath: PlayerNum
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7284079906216203235, guid: d72efdc9889e8eb4aa5d08aabefc5947,
         type: 3}
       propertyPath: m_Name
@@ -41513,6 +41538,21 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 4300000, guid: 7a4ae1ac3314eff49b422f6f7308392d, type: 3}
+    - target: {fileID: 7284079905784582981, guid: d72efdc9889e8eb4aa5d08aabefc5947,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284079905784582981, guid: d72efdc9889e8eb4aa5d08aabefc5947,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284079906216203234, guid: d72efdc9889e8eb4aa5d08aabefc5947,
+        type: 3}
+      propertyPath: PlayerNum
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7284079906216203235, guid: d72efdc9889e8eb4aa5d08aabefc5947,
         type: 3}
       propertyPath: m_Name
