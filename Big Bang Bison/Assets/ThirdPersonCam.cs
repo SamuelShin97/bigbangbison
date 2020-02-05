@@ -7,6 +7,8 @@ public class ThirdPersonCam : MonoBehaviour
     public float RoatationSpeed = 3;
     public Transform Target, Player;
     public int playerNum;
+    public float MaxClamp = 40.0f;
+    public float MinClamp = 25.0f;
     float MouseX, MouseY;
 
     private void Start()
@@ -25,25 +27,25 @@ public class ThirdPersonCam : MonoBehaviour
         if (playerNum == 1) {
             MouseX += Input.GetAxis("MouseX1") * RoatationSpeed;
             MouseY += Input.GetAxis("MouseY1") * RoatationSpeed;
-            MouseY = Mathf.Clamp(MouseY, 0, 50);
+            MouseY = Mathf.Clamp(MouseY, MinClamp, MaxClamp);
         }
         else if (playerNum == 2)
         {
             MouseX += Input.GetAxis("MouseX2") * RoatationSpeed;
             MouseY += Input.GetAxis("MouseY2") * RoatationSpeed;
-            MouseY = Mathf.Clamp(MouseY, 0, 50);
+            MouseY = Mathf.Clamp(MouseY, MinClamp, MaxClamp);
         }
         else if (playerNum == 3)
         {
             MouseX += Input.GetAxis("MouseX3") * RoatationSpeed;
             MouseY += Input.GetAxis("MouseY3") * RoatationSpeed;
-            MouseY = Mathf.Clamp(MouseY, 0, 50);
+            MouseY = Mathf.Clamp(MouseY, MinClamp, MaxClamp);
         }
         else if (playerNum == 4)
         {
             MouseX += Input.GetAxis("MouseX4") * RoatationSpeed;
             MouseY += Input.GetAxis("MouseY4") * RoatationSpeed;
-            MouseY = Mathf.Clamp(MouseY, 0, 50);
+            MouseY = Mathf.Clamp(MouseY, MinClamp, MaxClamp);
         }
         transform.LookAt(Target);
         Target.rotation = Quaternion.Euler(MouseY, MouseX, 0);

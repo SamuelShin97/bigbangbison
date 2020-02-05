@@ -52,6 +52,7 @@ public class Abilitys : MonoBehaviour
 
     private void Push()
     {
+
         Collider[] colliders = Physics.OverlapSphere(lookAt.position, pushRadius);
 
         foreach(Collider pushBison in colliders)
