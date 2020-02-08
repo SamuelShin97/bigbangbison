@@ -9,12 +9,16 @@ public class ThirdPersonCam : MonoBehaviour
     public int playerNum;
     public float MaxClamp = 40.0f;
     public float MinClamp = 25.0f;
+    public float distance = 20.0f;
     float MouseX, MouseY;
+    Camera m_MainCamera;
 
     private void Start()
     {
         //Cursor.visible = false;
         //Cursor.lockState = 
+        m_MainCamera = Camera.main;
+        m_MainCamera.enabled = true;
     }
 
     void LateUpdate()
