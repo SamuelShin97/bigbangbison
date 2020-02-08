@@ -4,31 +4,31 @@ using UnityEngine;
 
 public class Push : MonoBehaviour
 {
-    // Start is called before the first frame update
+    
     public float forceFactro = 200f;
     public int PlayerNum;
-    public int PushActivate;
+    public bool PushActivate = false;
     private string push = "Ability";
     List<Rigidbody> rgbBison = new List<Rigidbody>();
     Transform Target;
     void Start()
     {
-        if (PushActivate == 1)
+        if (PushActivate)
         {
             push = push + PlayerNum;
             Target = GetComponent<Transform>();
         }
     }
-    // Update is called once per frame
+    
     void FixedUpdate()
     {
-        if (PushActivate == 1)
+        if (PushActivate)
         {
             if (Input.GetButton(push))
             {
                 foreach (Rigidbody rgbBis in rgbBison)
                 {
-                    rgbBis.AddForce((Target.position + rgbBis.position) * forceFactro * Time.fixedDeltaTime);
+                    rgbBis.AddForce((rgbBis.position - Target.position) * forceFactro * Time.fixedDeltaTime);
                 }
             }
         }

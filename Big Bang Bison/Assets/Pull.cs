@@ -7,7 +7,7 @@ public class Pull : MonoBehaviour
     
     public float forceFactro = 200f;
     public int PlayerNum;
-    public int PullActivate;
+    public bool PullActivate = false;
     private string pull = "Ability";
     List<Rigidbody> rgbBison = new List<Rigidbody>();
     Transform Target;
@@ -16,7 +16,7 @@ public class Pull : MonoBehaviour
     //public bool showGizmos = true;
     void Start()
     {
-        if (PullActivate == 1)
+        if (PullActivate)
         {
             pull = pull + PlayerNum;
             Target = GetComponent<Transform>();
@@ -26,7 +26,7 @@ public class Pull : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (PullActivate == 1)
+        if (PullActivate)
         {
             if (Input.GetButton(pull))
             {
