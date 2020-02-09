@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 8025911103fed1b41828ef4f0241f983
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - agentPrefab: {instanceID: 0}
+  - idleBehavior: {fileID: 11400000, guid: 5f6e4adfc4d3300418f3a978017c5627, type: 2}
+  - runningBehavior: {fileID: 11400000, guid: a7adc072dbeb0134188c07e11b8ccae3, type: 2}
+  - panicBehavior: {fileID: 11400000, guid: 77d9d046e0036e5459ae99b1395f06ed, type: 2}
+  - outOfPlayBehavior: {fileID: 11400000, guid: da93f8c2baeba3e47a5a20200e5ccbc8,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
