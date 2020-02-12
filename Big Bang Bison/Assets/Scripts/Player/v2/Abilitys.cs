@@ -57,7 +57,7 @@ public class Abilitys : MonoBehaviour
         {
             if (pushBison.CompareTag("RedBison") || pushBison.CompareTag("BlueBison"))
             {
-            Rigidbody pushBody = pushBison.GetComponent<Rigidbody>();
+                Rigidbody pushBody = pushBison.GetComponent<Rigidbody>();
                 pushBody.AddExplosionForce(pushAmount, lookAt.position, pushRadius);
             }
         }
