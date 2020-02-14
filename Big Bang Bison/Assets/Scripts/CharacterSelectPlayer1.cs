@@ -25,15 +25,15 @@ public class CharacterSelectPlayer1 : MonoBehaviour
             model.enabled = false;
         }
         cursorX = new float[4];
-        cursorX[0] = -164.1f;
-        cursorX[1] = 9.7f;
-        cursorX[2] = -164.1f;
-        cursorX[3] = 9.7f;
+        cursorX[0] = -2.25f;
+        cursorX[1] = 0.25f;
+        cursorX[2] = -2.25f;
+        cursorX[3] = 0.25f;
         cursorY = new float[4];
-        cursorY[0] = 70.7f;
-        cursorY[1] = 70.7f;
-        cursorY[2] = 15.8f;
-        cursorY[3] = 15.8f;
+        cursorY[0] = 0.96f;
+        cursorY[1] = 0.96f;
+        cursorY[2] = 0.22f;
+        cursorY[3] = 0.22f;
 
         // Enable 1st model Renderer
         model = models[0].GetComponent<Renderer>();
@@ -81,7 +81,7 @@ public class CharacterSelectPlayer1 : MonoBehaviour
         // Move cursor to selected icon
         print(cursorX[newCursor]);
         print(cursorY[newCursor]);
-        cursor.transform.localPosition = new Vector3(cursorX[newCursor], cursorY[newCursor], 0); ;
+        cursor.transform.position= new Vector3(cursorX[newCursor], cursorY[newCursor], 0); ;
         currentCursor = newCursor;
 
         //Set current model to the newly enabled one
