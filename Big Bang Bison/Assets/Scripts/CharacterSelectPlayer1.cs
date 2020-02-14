@@ -12,6 +12,7 @@ public class CharacterSelectPlayer1 : MonoBehaviour
     private int currentCursor;
     private int currentModel;
     private int newModel;
+    private int newCursor;
 
     // Start is called before the first frame update
     void Start()
@@ -29,16 +30,17 @@ public class CharacterSelectPlayer1 : MonoBehaviour
         cursorX[2] = -164.1f;
         cursorX[3] = 9.7f;
         cursorY = new float[4];
-        cursorX[0] = 70.7f;
-        cursorX[1] = 70.7f;
-        cursorX[2] = 15.8f;
-        cursorX[3] = 15.8f;
+        cursorY[0] = 70.7f;
+        cursorY[1] = 70.7f;
+        cursorY[2] = 15.8f;
+        cursorY[3] = 15.8f;
+
         // Enable 1st model Renderer
         model = models[0].GetComponent<Renderer>();
         model.enabled = true;
-        
-        // Cursor setup
 
+        // Cursor setup
+        currentCursor = 0;
     }
 
     // Update is called once per frame
@@ -47,12 +49,22 @@ public class CharacterSelectPlayer1 : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D)){
             print("right character");
             newModel = Mathf.Abs(currentModel + 1) % 4;
+            newCursor = (currentCursor++) % 4;
             change_model();
         }
         else if (Input.GetKeyDown(KeyCode.A)){
             print("left character");
-            newModel = Mathf.Abs(currentModel - 1) % 2;
-            change_model();
+            if (currentModel == 0)
+            {
+                newModel = 3;
+                newCursor = 3;
+            }
+            else
+            {
+                newModel = currentModel--;
+                newCursor = currentCursor--; 
+            }
+                change_model();
         }
     }
 
@@ -67,7 +79,10 @@ public class CharacterSelectPlayer1 : MonoBehaviour
         modelB.enabled = true;
 
         // Move cursor to selected icon
-
+        print(cursorX[newCursor]);
+        print(cursorY[newCursor]);
+        cursor.transform.localPosition = new Vector3(cursorX[newCursor], cursorY[newCursor], 0); ;
+        currentCursor = newCursor;
 
         //Set current model to the newly enabled one
         currentModel = newModel;
