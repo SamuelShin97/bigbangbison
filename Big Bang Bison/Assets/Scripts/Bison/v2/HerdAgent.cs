@@ -40,9 +40,15 @@ public class HerdAgent : MonoBehaviour
     // 0 - Idle, 1 - running, 2 - panicking, 3 - Off ground
     public byte state = 0;
 
+    //how much the bison have grown
+    public float growth;
+    public bool scoreable;
+
     // Start is called before the first frame update
     void Start()
     {
+        growth = 0f;
+        scoreable = true;
         agentCollider = GetComponent<Collider>(); // save my collider
         agentBody = GetComponent<Rigidbody>();
         agentAnimator = GetComponentInChildren<Animator>();
