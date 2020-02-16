@@ -1,14 +1,8 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Big Bang Bison/Assets/Models/Characters.meta
-guid: dda6efb7f7bb13e4898ad43a0ef6df56
-folderAsset: yes
-DefaultImporter:
-=======
-guid: dc5e618f6a271d645adbfc9b0923bd2c
+guid: aa8ca6b5f6c1fd24faca17f2b2e4d7db
 NativeFormatImporter:
->>>>>>> 3rdPersonKeyboard:Big Bang Bison/Assets/Materials/Character Materials/New Material.mat.meta
   externalObjects: {}
-  mainObjectFileID: 2100000
+  mainObjectFileID: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
