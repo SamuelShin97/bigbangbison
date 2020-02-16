@@ -622,10 +622,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: b854cc67-e03b-4a45-8815-cba3b3d95de9
+  cloudProjectId: 
   framebufferDepthMemorylessMode: 0
-  projectName: Big Bang Bison
-  organizationId: duboisterrence
+  projectName: 
+  organizationId: 
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

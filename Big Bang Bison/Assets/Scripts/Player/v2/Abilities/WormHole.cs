@@ -25,7 +25,7 @@ public class WormHole : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Push1"))
+        if (Input.GetButton("Ability4"))
         {
             Debug.Log("pushed rb");
             showGizmos = true;
@@ -49,7 +49,7 @@ public class WormHole : MonoBehaviour
             }
         }
 
-        if (Input.GetButtonUp("Push1"))
+        if (Input.GetButtonUp("Ability4"))
         {
             Debug.Log("released rb");
             showGizmos = false;

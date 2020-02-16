@@ -30,10 +30,10 @@ public class ObjPush : MonoBehaviour
     }
     void OnTriggerEnter(Collider pushGroup)
     {
-        if (pushGroup.CompareTag("Bison")) rgbBison.Add(pushGroup.GetComponent<Rigidbody>());
+        if (pushGroup.CompareTag("RedBison") || pushGroup.CompareTag("BlueBison")) rgbBison.Add(pushGroup.GetComponent<Rigidbody>());
     }
     void OnTriggerExit(Collider pushGroup)
     {
-        if (pushGroup.CompareTag("Bison")) rgbBison.Remove(pushGroup.GetComponent<Rigidbody>());
+        if (pushGroup.CompareTag("RedBison") || pushGroup.CompareTag("BlueBison")) rgbBison.Remove(pushGroup.GetComponent<Rigidbody>());
     }
 }

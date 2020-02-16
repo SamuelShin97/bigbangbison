@@ -29,10 +29,10 @@ public class ObjPull : MonoBehaviour
     }
     void OnTriggerEnter(Collider pullGroup)
     {
-        if (pullGroup.CompareTag("Bison")) rgbBison.Add(pullGroup.GetComponent<Rigidbody>());
+        if (pullGroup.CompareTag("RedBison") || pullGroup.CompareTag("BlueBison")) rgbBison.Add(pullGroup.GetComponent<Rigidbody>());
     }
     void OnTriggerExit(Collider pullGroup)
     {
-        if (pullGroup.CompareTag("Bison")) rgbBison.Remove(pullGroup.GetComponent<Rigidbody>());
+        if (pullGroup.CompareTag("RedBison") || pullGroup.CompareTag("BlueBison")) rgbBison.Remove(pullGroup.GetComponent<Rigidbody>());
     }
 }

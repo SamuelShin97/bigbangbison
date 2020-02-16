@@ -17,7 +17,7 @@ public class ObjWall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (elapsed < 2.2)
+        if (elapsed < 1.9)
         {
             transform.Translate(0, speed * Time.deltaTime, 0);
         }
