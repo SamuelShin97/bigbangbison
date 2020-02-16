@@ -4,24 +4,23 @@ using UnityEngine;
 
 public class Pull : MonoBehaviour
 {
-    
-    public float forceFactro = 200f;
     public int PlayerNum;
+
     public bool PullActivate = false;
+    public Transform SpawnPoint;
+    public GameObject PullObj;
+    
     private string pull = "Ability";
-    List<Rigidbody> rgbBison = new List<Rigidbody>();
-    Transform Target;
-    // Start is called before the first frame update
-    //public float distance = 10.0f;
-    //public bool showGizmos = true;
+    
+
     void Start()
     {
         if (PullActivate)
         {
             pull = pull + PlayerNum;
-            Target = GetComponent<Transform>();
+            
         }
-        
+
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -30,21 +29,12 @@ public class Pull : MonoBehaviour
         {
             if (Input.GetButton(pull))
             {
-                foreach (Rigidbody rgbBis in rgbBison)
-                {
-                    rgbBis.AddForce((Target.position - rgbBis.position) * forceFactro * Time.fixedDeltaTime);
-                }
+
+            }
+            if (Input.GetButtonUp(pull))
+            {
+                Instantiate(PullObj, SpawnPoint.position, SpawnPoint.rotation);
             }
         }
-    }
-    
-
-    void OnTriggerEnter(Collider pullGroup)
-    {
-        if (pullGroup.CompareTag("Bison")) rgbBison.Add(pullGroup.GetComponent<Rigidbody>());
-    }
-    void OnTriggerExit(Collider pullGroup)
-    {
-        if (pullGroup.CompareTag("Bison")) rgbBison.Remove(pullGroup.GetComponent<Rigidbody>());
     }
 }

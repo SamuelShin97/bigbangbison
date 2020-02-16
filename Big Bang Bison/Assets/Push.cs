@@ -6,17 +6,22 @@ public class Push : MonoBehaviour
 {
     
     public float forceFactro = 200f;
+
     public int PlayerNum;
+
     public bool PushActivate = false;
+    public Transform SpawnPoint;
+    public GameObject PushObj;
+
     private string push = "Ability";
-    List<Rigidbody> rgbBison = new List<Rigidbody>();
-    Transform Target;
+    
+
     void Start()
     {
         if (PushActivate)
         {
             push = push + PlayerNum;
-            Target = GetComponent<Transform>();
+            
         }
     }
     
@@ -26,20 +31,12 @@ public class Push : MonoBehaviour
         {
             if (Input.GetButton(push))
             {
-                foreach (Rigidbody rgbBis in rgbBison)
-                {
-                    rgbBis.AddForce((rgbBis.position - Target.position) * forceFactro * Time.fixedDeltaTime);
-                }
+
+            }
+            if (Input.GetButtonUp(push))
+            {
+                Instantiate(PushObj, SpawnPoint.position, SpawnPoint.rotation);
             }
         }
     }
-    void OnTriggerEnter(Collider pushGroup)
-    {
-        if (pushGroup.CompareTag("Bison")) rgbBison.Add(pushGroup.GetComponent<Rigidbody>());
-    }
-    void OnTriggerExit(Collider pushGroup)
-    {
-        if (pushGroup.CompareTag("Bison")) rgbBison.Remove(pushGroup.GetComponent<Rigidbody>());
-    }
-
 }
