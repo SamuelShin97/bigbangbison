@@ -9,7 +9,6 @@ public class HillInteraction : MonoBehaviour
     private bool insideHill = false;
     public bool isMedium = false;
     public bool isLarge = false;
-    
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +38,7 @@ public class HillInteraction : MonoBehaviour
                 {
                     //Debug.Log("get medium");
                     transform.localScale = new Vector3(mediumSize, mediumSize, mediumSize);
+                    //transform.position = new Vector3(transform.position.x, transform.position.y * 2, transform.position.z);
                     isMedium = true;
                 }
             }

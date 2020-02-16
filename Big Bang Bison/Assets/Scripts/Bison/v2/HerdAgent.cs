@@ -40,12 +40,15 @@ public class HerdAgent : MonoBehaviour
     // 0 - Idle, 1 - running, 2 - panicking, 3 - Off ground
     public byte state = 0;
 
-    // Growth number
-    public float Growth = 0;
+    //how much the bison have grown
+    public float growth;
+    public bool scoreable;
 
     // Start is called before the first frame update
     void Start()
     {
+        growth = 0f;
+        scoreable = true;
         agentCollider = GetComponent<Collider>(); // save my collider
         agentBody = GetComponent<Rigidbody>();
         agentAnimator = GetComponentInChildren<Animator>();
@@ -68,10 +71,10 @@ public class HerdAgent : MonoBehaviour
     public void Move(Vector3 velocity)
     {
         agentBody.AddForce(velocity * Time.deltaTime, ForceMode.Impulse);
-        if (agentBody.velocity.sqrMagnitude > 625)  // caps speed
-        {
-            agentBody.AddForce(-agentBody.velocity.normalized * (agentBody.velocity.magnitude - 10), ForceMode.Impulse);
-        }
+        //if (agentBody.velocity.sqrMagnitude > 100)  // caps speed
+        //{
+        //    agentBody.AddForce(-agentBody.velocity.normalized * (agentBody.velocity.magnitude - 10), ForceMode.Impulse);
+        //}
         if (agentBody.velocity.sqrMagnitude > 1) transform.forward = agentBody.velocity; // face the direction I'm moving
     }
 }
