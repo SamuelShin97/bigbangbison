@@ -257,7 +257,7 @@ MonoBehaviour:
   Player: {fileID: 7284079906216203245}
   playerNum: 0
   MaxClamp: 50
-  MinClamp: 35
+  MinClamp: 20
   distance: 20
 --- !u!1 &7284079906216203235
 GameObject:

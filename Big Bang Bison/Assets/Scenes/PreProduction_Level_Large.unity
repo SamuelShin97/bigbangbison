@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 860a66ca4259b384f9ec01b687f71c3c, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0.044414505, g: 0.0418735, b: 0.045859963, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6406,7 +6406,7 @@ PrefabInstance:
     - target: {fileID: 7284079906216203235, guid: d72efdc9889e8eb4aa5d08aabefc5947,
         type: 3}
       propertyPath: m_Name
-      value: Player 3
+      value: Player 3 (Wall)
       objectReference: {fileID: 0}
     - target: {fileID: 7284079906216203245, guid: d72efdc9889e8eb4aa5d08aabefc5947,
         type: 3}
@@ -9139,7 +9139,7 @@ PrefabInstance:
     - target: {fileID: 7284079906216203235, guid: d72efdc9889e8eb4aa5d08aabefc5947,
         type: 3}
       propertyPath: m_Name
-      value: Player 2
+      value: Player 2 (Pull)
       objectReference: {fileID: 0}
     - target: {fileID: 7284079906216203245, guid: d72efdc9889e8eb4aa5d08aabefc5947,
         type: 3}
@@ -21376,6 +21376,11 @@ PrefabInstance:
       propertyPath: playerNum
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7284079905784582981, guid: d72efdc9889e8eb4aa5d08aabefc5947,
+        type: 3}
+      propertyPath: m_HDR
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7284079906216203234, guid: d72efdc9889e8eb4aa5d08aabefc5947,
         type: 3}
       propertyPath: PlayerNum
@@ -21384,7 +21389,7 @@ PrefabInstance:
     - target: {fileID: 7284079906216203235, guid: d72efdc9889e8eb4aa5d08aabefc5947,
         type: 3}
       propertyPath: m_Name
-      value: Player 1
+      value: Player 1 (Push)
       objectReference: {fileID: 0}
     - target: {fileID: 7284079906216203245, guid: d72efdc9889e8eb4aa5d08aabefc5947,
         type: 3}
@@ -21443,6 +21448,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d72efdc9889e8eb4aa5d08aabefc5947, type: 3}
+--- !u!1 &798217431 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7284079905784583352, guid: d72efdc9889e8eb4aa5d08aabefc5947,
+    type: 3}
+  m_PrefabInstance: {fileID: 798217430}
+  m_PrefabAsset: {fileID: 0}
+--- !u!124 &798217432
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798217431}
+  m_Enabled: 1
 --- !u!1 &805247119
 GameObject:
   m_ObjectHideFlags: 0
@@ -30530,7 +30549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookAt: {fileID: 2020137097}
-  showGizmos: 1
+  showGizmos: 0
   AoERadius: 5
   speed: 40
   maxRange: 35
@@ -43602,7 +43621,7 @@ PrefabInstance:
     - target: {fileID: 7284079906216203235, guid: d72efdc9889e8eb4aa5d08aabefc5947,
         type: 3}
       propertyPath: m_Name
-      value: Player 4
+      value: Player 4 (Wormhole)
       objectReference: {fileID: 0}
     - target: {fileID: 7284079906216203245, guid: d72efdc9889e8eb4aa5d08aabefc5947,
         type: 3}
