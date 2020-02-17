@@ -101,7 +101,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7284079904157117344}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.85, z: 0}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7284079905784582983}
@@ -184,7 +184,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7284079905784583352}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -9}
+  m_LocalPosition: {x: 0, y: 0, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7284079904157117359}
@@ -256,8 +256,8 @@ MonoBehaviour:
   Target: {fileID: 7284079904157117359}
   Player: {fileID: 7284079906216203245}
   playerNum: 0
-  MaxClamp: 40
-  MinClamp: 25
+  MaxClamp: 50
+  MinClamp: 35
   distance: 20
 --- !u!1 &7284079906216203235
 GameObject:
