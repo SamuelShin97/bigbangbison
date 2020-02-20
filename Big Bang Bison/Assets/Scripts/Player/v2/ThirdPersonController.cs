@@ -10,6 +10,7 @@ public class ThirdPersonController : MonoBehaviour
     public float rotationSpeed = 100.0f;
     public int PlayerNum;
 
+
     // Update is called once per frame
     void Update()
     {

@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     {
         DontDestroyOnLoad(this);
         keepScore = FindObjectOfType<KeepScore>();
+        Debug.Log(keepScore);
         winner = "hi";
         hillCollection = hills.GetComponentsInChildren<Transform>();
         timePassed_seconds = 1.0f;

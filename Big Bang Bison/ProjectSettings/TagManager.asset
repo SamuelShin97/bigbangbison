@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Hill
   - Bison
+  - Send
+  - RedBison
+  - BlueBison
+  - From
+  - To
   layers:
   - Default
   - TransparentFX

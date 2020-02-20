@@ -11,9 +11,7 @@ GameObject:
   - component: {fileID: 2049797887733623779}
   - component: {fileID: 3252963186907532110}
   - component: {fileID: 1792004544524328367}
-  - component: {fileID: 7167804180308052754}
   - component: {fileID: 1637019954014773709}
-  - component: {fileID: 114662542447531952}
   m_Layer: 12
   m_Name: Bison v2 Red
   m_TagString: RedBison
@@ -29,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2049797887733623780}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.2558892, y: 116.322136, z: -174.45671}
+  m_LocalPosition: {x: -2.2558892, y: -2.8, z: -174.45671}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7216330333930203993}
@@ -65,22 +63,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
---- !u!114 &7167804180308052754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2049797887733623780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63031cb3e2a79ae41b395c189f06df05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mediumSize: 2
-  largeSize: 3
-  isMedium: 0
-  isLarge: 0
 --- !u!114 &1637019954014773709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,20 +77,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agentBody: {fileID: 0}
   state: 0
---- !u!114 &114662542447531952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2049797887733623780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a95475663620c9a469c5e3a32a6c98f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blueText: {fileID: 0}
-  redText: {fileID: 0}
+  growth: 0
+  scoreable: 0
 --- !u!1 &7216330333930567425
 GameObject:
   m_ObjectHideFlags: 0
@@ -1094,7 +1064,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7216330333930567545}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0.128}
+  m_LocalPosition: {x: 0, y: -2.8, z: 0.128}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7216330333930203995}
@@ -1146,7 +1116,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7216330333930567547}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: -0.5, z: 0}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7216330333930203993}

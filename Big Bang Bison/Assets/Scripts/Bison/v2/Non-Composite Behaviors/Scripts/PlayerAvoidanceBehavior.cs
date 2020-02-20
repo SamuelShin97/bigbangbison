@@ -16,8 +16,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Herd/Behavior/Player Avoidance")]
 public class PlayerAvoidanceBehavior : FilteredHerdBehavior
 {
-    [Range(0f, 20f)]
-    public float radius = 15;
 
     public override Vector3 CalculateMove(HerdAgent agent, List<Transform> context, Herd herd)
     {

@@ -49,8 +49,8 @@ public class Herd : MonoBehaviour
     public float neighborRadius = 15f; // how close something has to be to be detected as a neighbor
     [Range(0f, 1f)]
     public float avoidanceRadiusMultiplier = 0.33f; // the radius for agents to avoid things, relative to neighborRadius
-    [Range(0, 20)]
-    public int crowdingThreshhold = 15;
+    [Range(0, 40)]
+    public int crowdingThreshhold = 25;
 
     // Math is faster when done with squares, save them here
     float squareMaxSpeed;
@@ -88,7 +88,7 @@ public class Herd : MonoBehaviour
         foreach (HerdAgent agent in agents)
         {
             RaycastHit ground;
-            // Determine state
+            // Determine state and keep them above the ground
             if (!Physics.Raycast(agent.transform.position, -Vector3.up, out ground, bisonHeight + 5f))
             {
                 if (agent.state != 3) Debug.Log("and I oop");
