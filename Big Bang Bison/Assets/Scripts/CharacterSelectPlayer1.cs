@@ -41,6 +41,8 @@ public class CharacterSelectPlayer1 : MonoBehaviour
 
         // Cursor setup
         currentCursor = 0;
+        cursor.transform.position = new Vector3(cursorX[0], cursorY[0], 0);
+
     }
 
     // Update is called once per frame
@@ -49,7 +51,7 @@ public class CharacterSelectPlayer1 : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D)){
             print("right character");
             newModel = Mathf.Abs(currentModel + 1) % 4;
-            newCursor = (currentCursor++) % 4;
+            newCursor = (currentCursor + 1) % 4;
             change_model();
         }
         else if (Input.GetKeyDown(KeyCode.A)){
@@ -61,10 +63,10 @@ public class CharacterSelectPlayer1 : MonoBehaviour
             }
             else
             {
-                newModel = currentModel--;
-                newCursor = currentCursor--; 
+                newModel = currentModel - 1;
+                newCursor = currentCursor - 1; 
             }
-                change_model();
+            change_model();
         }
     }
 
@@ -77,14 +79,15 @@ public class CharacterSelectPlayer1 : MonoBehaviour
         // Disable old model and enable new
         modelA.enabled = false;
         modelB.enabled = true;
+        //Set current model to the newly enabled one
+        currentModel = newModel;
 
         // Move cursor to selected icon
         print(cursorX[newCursor]);
         print(cursorY[newCursor]);
-        cursor.transform.position= new Vector3(cursorX[newCursor], cursorY[newCursor], 0); ;
+        cursor.transform.position= new Vector3(cursorX[newCursor], cursorY[newCursor], 0);
         currentCursor = newCursor;
 
-        //Set current model to the newly enabled one
-        currentModel = newModel;
+
     }
 }
