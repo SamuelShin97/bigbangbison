@@ -137,7 +137,7 @@ public class Herd : MonoBehaviour
             Debug.Log("removing " + agent.name + " from herd");
             if (this.agents.Remove(agent)) Debug.Log("removed");
             Debug.Log("destroying " + agent.name);
-            Destroy(agent);
+            Destroy(agent.gameObject);
         }
     }
 
