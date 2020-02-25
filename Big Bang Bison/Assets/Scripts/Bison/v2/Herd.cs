@@ -135,7 +135,7 @@ public class Herd : MonoBehaviour
         foreach (HerdAgent agent in toDestroy)
         {
             Debug.Log("removing " + agent.name + " from herd");
-            if (agents.Remove(agent)) Debug.Log("removed");
+            if (this.agents.Remove(agent)) Debug.Log("removed");
             Debug.Log("destroying " + agent.name);
             Destroy(agent);
         }
