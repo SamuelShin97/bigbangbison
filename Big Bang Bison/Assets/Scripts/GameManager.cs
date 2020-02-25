@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 {
     public Text text;
     public float gameTime_seconds; //in seconds
-    public float speed = 0;
+    public float speed = 0; //how fast the time goes down
     public string winner;
     public GameObject hills;
     public int hillFrequency_seconds; //in seconds
@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
     {
         int currentScene = SceneManager.GetActiveScene().buildIndex;
 
-        if (currentScene == 1)
+        if (currentScene == 2) //if game scene
         {
             gameTime_seconds -= Time.deltaTime * speed;
             timePassed_seconds += Time.deltaTime * speed;
@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
             {
                 winner = DetermineWinner();
                 Debug.Log("end game");
-                SceneManager.LoadScene(2);
+                SceneManager.LoadScene(3);
             }
 
             HillChange(timePassedTruncated);
