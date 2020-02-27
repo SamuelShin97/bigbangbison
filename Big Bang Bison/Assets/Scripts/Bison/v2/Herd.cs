@@ -84,6 +84,9 @@ public class Herd : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Keep track of bison to remove
+        List<HerdAgent> toDestroy = new List<HerdAgent>();
+
         // Iterate through all agents and  move them
         foreach (HerdAgent agent in agents)
         {
@@ -99,15 +102,23 @@ public class Herd : MonoBehaviour
             } else
             {
                 Vector3 adjustment = Vector3.zero;
-                adjustment.y = bisonHeight + 2 - ground.distance;
+                adjustment.y = (bisonHeight-0.85f) - ground.distance;
                 agent.transform.position += adjustment;
             }
 
-            if (agent.state == 3) continue; // If out of play, skip
-
-            // Reset bison to default state
-            agent.state = 0;
-            agent.agentBody.drag = idleDrag;
+            if (agent.state == 3)
+            {
+                agent.transform.position = new Vector3(agent.transform.position.x, agent.transform.position.y - (Time.deltaTime * 0.5f), agent.transform.position.z);
+                if (agent.transform.position.y < -1)
+                {
+                    toDestroy.Add(agent);
+                }
+            } else
+            {
+                // Reset bison to default state
+                agent.state = 0;
+                agent.agentBody.drag = idleDrag;
+            }
 
             List<Transform> context = GetNearbyObjects(agent); // get the context, also flag if a player is near or if agent is crowded
 
@@ -119,6 +130,14 @@ public class Herd : MonoBehaviour
 
             // colors crowded bison
             // agent.GetComponentInChildren<MeshRenderer>().material.color = Color.Lerp(Color.white, Color.red, context.Count / 8f);
+        }
+
+        foreach (HerdAgent agent in toDestroy)
+        {
+            Debug.Log("removing " + agent.name + " from herd");
+            if (this.agents.Remove(agent)) Debug.Log("removed");
+            Debug.Log("destroying " + agent.name);
+            Destroy(agent.gameObject);
         }
     }
 

@@ -22,7 +22,12 @@ public class KeepScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         blueText.text = "Blue Points: " + bluePoints.ToString();
         redText.text = "Red Points: " + redPoints.ToString();
+        */
+        blueText.text =  bluePoints.ToString();
+        redText.text =  redPoints.ToString();
+
     }
 }

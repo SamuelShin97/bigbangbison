@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ObjWall : MonoBehaviour
 {
-    private float timerSpeed = 2f;
     private float speed = 2f;
     private float elapsed;
     List<Rigidbody> rgbBison = new List<Rigidbody>();

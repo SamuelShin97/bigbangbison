@@ -25,7 +25,6 @@ public class ObjPush : MonoBehaviour
         if (elapsed > 3)
         {
             Destroy(this.gameObject);
-
         }
     }
     void OnTriggerEnter(Collider pushGroup)

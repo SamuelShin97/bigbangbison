@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     Transform activeHill;
     int index;
     List<int> activatedHills = new List<int>();
+    public Image timerColor;
 
     //Awake is always called before any Start functions
     void Awake()
@@ -40,6 +41,12 @@ public class GameManager : MonoBehaviour
         activeHill = hillCollection[index];
         activeHill.gameObject.SetActive(true);
         activatedHills.Add(index);
+
+    }
+
+    void Start()
+    {
+        timerColor.GetComponent<Image>().color = new Color32(29, 226, 110, 100);
     }
 
     //Update is called every frame.
@@ -47,7 +54,7 @@ public class GameManager : MonoBehaviour
     {
         int currentScene = SceneManager.GetActiveScene().buildIndex;
 
-        if (currentScene == 1)
+        if (currentScene == 2)
         {
             gameTime_seconds -= Time.deltaTime * speed;
             timePassed_seconds += Time.deltaTime * speed;
@@ -60,7 +67,7 @@ public class GameManager : MonoBehaviour
             {
                 winner = DetermineWinner();
                 Debug.Log("end game");
-                SceneManager.LoadScene(2);
+                SceneManager.LoadScene(3);
             }
 
             HillChange(timePassedTruncated);
