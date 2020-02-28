@@ -27,6 +27,9 @@ public class HerdAgent : MonoBehaviour
         get { return agentHerd; }
     }
 
+    // Am I being herded, near the player
+    public bool nearPlayer = false;
+
     // Return my collider
     Collider agentCollider;
     public Collider AgentCollider {
@@ -43,6 +46,11 @@ public class HerdAgent : MonoBehaviour
     //how much the bison have grown
     public float growth;
     public bool scoreable;
+    public float mediumMaturity;
+    public float fullMaturity;
+    Light glow;
+    ParticleSystem fullGrowthPfx;
+    private bool startedBisonPfx;
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +60,11 @@ public class HerdAgent : MonoBehaviour
         agentCollider = GetComponent<Collider>(); // save my collider
         agentBody = GetComponent<Rigidbody>();
         agentAnimator = GetComponentInChildren<Animator>();
+        glow = gameObject.GetComponentInChildren<Light>();
+        glow.gameObject.SetActive(false);
+        fullGrowthPfx = GetComponentInChildren<ParticleSystem>();
+        startedBisonPfx = false;
+
     }
 
     // Called once when created
@@ -65,6 +78,16 @@ public class HerdAgent : MonoBehaviour
         agentAnimator.SetInteger("State", state);
         agentAnimator.SetFloat("Speed", agentBody.velocity.magnitude);
         if (state == 0) agentAnimator.SetFloat("Idle", Random.value);
+        if (growth >= mediumMaturity)
+        {
+            LetThereBeLight();
+        }
+        if (growth >= fullMaturity)
+        {
+            
+            PlayPfx();
+        }
+        
     }
 
     // Move it
@@ -77,4 +100,60 @@ public class HerdAgent : MonoBehaviour
         //}
         if (agentBody.velocity.sqrMagnitude > 1) transform.forward = agentBody.velocity; // face the direction I'm moving
     }
+
+    public bool Drove()
+    {
+        if (state == 0)
+        {
+            StartCoroutine(Droving());
+            return true;
+        }
+        return false;
+    }
+
+    // this coroutine runs with each agent that's near the player, keeps bison running for idleTimer seconds after it gets away from them
+    IEnumerator Droving()
+    {
+        float timer = agentHerd.idleTimer;
+        state = 1;
+        agentBody.drag = agentHerd.runningDrag;
+        //Debug.Log(agent.gameObject.name + ": droving");
+        //Debug.Log(timer);
+        while (timer > 0)
+        {
+            if (nearPlayer)
+            {
+                timer = agentHerd.idleTimer;
+                yield return null; // if near the player then reset the timer and continue
+                //Debug.Log(timer + "reset");
+            }
+            else
+            {
+                timer -= Time.deltaTime;
+                //Debug.Log(timer);
+                yield return null;
+            }
+        }
+        //Debug.Log(gameObject.name + ": idle");
+        state = 0;
+        agentBody.drag = agentHerd.idleDrag;
+    }
+
+    void LetThereBeLight()
+    {
+        glow.gameObject.SetActive(true);
+    }
+
+    void PlayPfx()
+    {
+        if (!startedBisonPfx)
+        {
+            fullGrowthPfx.Play();
+            startedBisonPfx = true;
+        }
+        
+        
+        //Debug.Log(fullGrowthPfx.isPlaying);
+    }
+    
 }

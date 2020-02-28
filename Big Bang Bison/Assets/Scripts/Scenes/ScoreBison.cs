@@ -5,21 +5,26 @@ using UnityEngine;
 public class ScoreBison : MonoBehaviour
 {
     //how long a bison needs to grow in a hill to be considered medium/full maturity (in seconds)
-    public float mediumMaturity; 
-    public float fullMaturity;
+    //public float mediumMaturity; 
+    //public float fullMaturity;
     //how many points a medium/full mature bison scores
     public int mediumMaturityPoints;
     public int fullMaturityPoints;
-    PlayParticleSystem playPS;
+    public PlayParticleSystem playPS;
     KeepScore keepScore;
-
+    HerdAgent herdAgent;
+    private float mediumMaturity;
+    private float fullMaturity;
 
     // Start is called before the first frame update
     void Start()
     {
         //may need to change this once we put in more than one particle system in the scene
-        playPS = FindObjectOfType<PlayParticleSystem>();
+        //playPS = FindObjectOfType<PlayParticleSystem>();
         keepScore = FindObjectOfType<KeepScore>();
+        herdAgent = FindObjectOfType<HerdAgent>();
+        mediumMaturity = herdAgent.mediumMaturity;
+        fullMaturity = herdAgent.fullMaturity;
     }
 
     // Update is called once per frame
@@ -113,5 +118,7 @@ public class ScoreBison : MonoBehaviour
     {
         bison.gameObject.transform.localScale = new Vector3(0, 0, 0);
         bison.gameObject.GetComponent<HerdAgent>().scoreable = false;
+        bison.gameObject.GetComponentInChildren<Light>().enabled = false;
+        bison.gameObject.GetComponentInChildren<ParticleSystem>().Stop();
     }
 }

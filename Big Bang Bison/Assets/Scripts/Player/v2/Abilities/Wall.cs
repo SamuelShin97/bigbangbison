@@ -30,34 +30,30 @@ public class Wall : MonoBehaviour
 
     }
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (PullActivate && coolDowns <= 0)
         {
             if (Input.GetButton(wall))
             {
                 SpawnPoint.gameObject.SetActive(true);
+                PositionPowerLocation();
             }
             if (Input.GetButtonUp(wall))
             {
                 Instantiate(WallObj, (SpawnPoint.position), SpawnPoint.rotation);
                 SpawnPoint.gameObject.SetActive(false);
+                coolDowns = coolDownDuration;
             }
         }
         else if (coolDowns > 0)
         {
             coolDowns -= Time.deltaTime;
+            SpawnPoint.gameObject.SetActive(false);
         }
     }
 
-    private void Update()
-    {
-        if (Input.GetButton(wall) && PullActivate)
-        {
-            PositionPowerLocation();
-        }
-
-    }
+    
 
     void PositionPowerLocation()
     {

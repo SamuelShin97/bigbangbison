@@ -25,6 +25,8 @@ public class CohesionBehavior : FilteredHerdBehavior
         // add all points together and average
         Vector3 cohesionMove = Vector3.zero;
         List<Transform> filterContext = (filter == null) ? context : filter.Filter(agent, context); // this is a filtered behavior
+        // if no neighbors return no adjustment
+        if (filterContext.Count == 0) return Vector3.zero;
         foreach (Transform item in filterContext)
         {
             cohesionMove += item.position;

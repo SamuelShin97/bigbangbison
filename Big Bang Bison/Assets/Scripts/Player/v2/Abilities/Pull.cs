@@ -28,33 +28,27 @@ public class Pull : MonoBehaviour
 
     }
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (PullActivate && coolDowns <= 0)
         {
             if (Input.GetButton(pull))
             {
                 SpawnPoint.gameObject.SetActive(true);
+                PositionPowerLocation();
             }
             if (Input.GetButtonUp(pull))
             {
                 Instantiate(PullObj, SpawnPoint.position, SpawnPoint.rotation);
                 SpawnPoint.gameObject.SetActive(false);
+                coolDowns = coolDownDuration;
             }
         }
         else if (coolDowns > 0)
         {
             coolDowns -= Time.deltaTime;
+            SpawnPoint.gameObject.SetActive(false);
         }
-    }
-
-    private void Update()
-    {
-        if (Input.GetButton(pull) && PullActivate)
-        {
-            PositionPowerLocation();
-        }
-
     }
 
     void PositionPowerLocation()

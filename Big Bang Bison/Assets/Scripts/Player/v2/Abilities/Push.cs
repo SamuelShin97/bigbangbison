@@ -32,14 +32,14 @@ public class Push : MonoBehaviour
         }
     }
     
-    void FixedUpdate()
+    void Update()
     {
         if (PushActivate && coolDowns <= 0)
         {
             if (Input.GetButton(push))
             {
                 SpawnPoint.gameObject.SetActive(true);
-                
+                PositionPowerLocation();
             }
             if (Input.GetButtonUp(push))
             {
@@ -51,16 +51,8 @@ public class Push : MonoBehaviour
         else if(coolDowns> 0)
         {
             coolDowns -= Time.deltaTime;
+            SpawnPoint.gameObject.SetActive(false);
         }
-    }
-
-    private void Update()
-    {
-        if (Input.GetButton(push) && PushActivate)
-        {
-            PositionPowerLocation();
-        }
-        
     }
 
     void PositionPowerLocation()

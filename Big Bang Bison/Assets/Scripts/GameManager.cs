@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     int index;
     List<int> activatedHills = new List<int>();
     public Image timerColor;
+    Animator timerAnimator;
 
     //Awake is always called before any Start functions
     void Awake()
@@ -41,12 +42,8 @@ public class GameManager : MonoBehaviour
         activeHill = hillCollection[index];
         activeHill.gameObject.SetActive(true);
         activatedHills.Add(index);
-
-    }
-
-    void Start()
-    {
-        timerColor.GetComponent<Image>().color = new Color32(29, 226, 110, 100);
+        changeTimerColor(activeHill);
+        timerAnimator = timerColor.GetComponent<Animator>();
     }
 
     //Update is called every frame.
@@ -101,6 +98,7 @@ public class GameManager : MonoBehaviour
                 //Debug.Log(child.name);
                 newHillArray[index] = child;
                 index++;
+                //Debug.Log("Hill name: " + child.GetComponent<GameObject>().name);
             }
         }
         return newHillArray;
@@ -108,6 +106,10 @@ public class GameManager : MonoBehaviour
 
     void HillChange(float timePassed)
     {
+        if(timePassed == 55f)
+        {
+            Debug.Log("jello");
+        }
 
         if (timePassed == hillFrequency_seconds)
         {
@@ -118,6 +120,7 @@ public class GameManager : MonoBehaviour
                 activeHill.gameObject.SetActive(false);
                 activeHill = hillCollection[RandomSelectionExcept()];
                 activeHill.gameObject.SetActive(true);
+                changeTimerColor(activeHill);
 
                 hillChange = true;
                 timePassed_seconds = 0.0f;
@@ -139,6 +142,37 @@ public class GameManager : MonoBehaviour
         while (activatedHills.Contains(rng));
 
         activatedHills.Add(rng);
+        
+        if (activatedHills.Count >= 3)
+        {
+            ReseetActivatedHills();
+        }
         return rng;
+    }
+
+    void ReseetActivatedHills()
+    {
+        activatedHills.Clear();
+    }
+
+    void changeTimerColor(Transform hill)
+    {
+        if(hill.gameObject.name == "Crystal Hill")
+        {
+            timerColor.GetComponent<Image>().color = new Color32(29, 226, 110, 255);
+        }
+        else if (hill.gameObject.name == "Desert Hill")
+        {
+            timerColor.GetComponent<Image>().color = new Color32(253, 224, 32, 255);
+        }
+        else if (hill.gameObject.name == "Tropical Hill")
+        {
+            timerColor.GetComponent<Image>().color = new Color32(216, 53, 172, 255);
+        }
+    }
+    
+    void fadeTimerColor()
+    {
+
     }
 }
