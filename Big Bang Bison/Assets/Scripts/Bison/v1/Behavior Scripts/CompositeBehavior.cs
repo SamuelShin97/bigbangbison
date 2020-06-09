@@ -44,7 +44,40 @@ public class CompositeBehavior : HerdBehavior
                     partialMove.Normalize();
                     partialMove *= weights[i];
                 }
-                
+
+                move += partialMove;
+            }
+        }
+
+        move.y = 0; // bison don't jump on their own
+        return move;
+    }
+
+    public override Vector3 CalculateMove(OnlineHerdAgent agent, List<Transform> context, OnlineHerd herd)
+    {
+        // handle data mismatch
+        if (behaviors.Length != weights.Length)
+        {
+            Debug.LogError("Data missmatch in " + name, this);
+            return Vector3.zero;
+        }
+
+        // set up move
+        Vector3 move = Vector3.zero;
+
+        // iterate through behaviors
+        for (int i = 0; i < behaviors.Length; i++)
+        {
+            Vector3 partialMove = behaviors[i].CalculateMove(agent, context, herd) * weights[i]; // do a behavior
+
+            if (partialMove != Vector3.zero)
+            {
+                if (partialMove.sqrMagnitude > weights[i] * weights[i]) // the weight caps the magnitude of each behavior
+                {
+                    partialMove.Normalize();
+                    partialMove *= weights[i];
+                }
+
                 move += partialMove;
             }
         }

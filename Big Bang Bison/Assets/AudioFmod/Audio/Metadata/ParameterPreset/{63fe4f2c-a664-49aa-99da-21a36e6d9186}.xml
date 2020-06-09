@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="ParameterPreset" id="{63fe4f2c-a664-49aa-99da-21a36e6d9186}">
+		<property name="name">
+			<value>Loop</value>
+		</property>
+		<relationship name="folder">
+			<destination>{9b938c80-fac1-4f2b-99b3-cb2897b07ee6}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{6e4205aa-eab6-4844-a71b-db1fafefd709}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{6e4205aa-eab6-4844-a71b-db1fafefd709}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>0.5700000524520874</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

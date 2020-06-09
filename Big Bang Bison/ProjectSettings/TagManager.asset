@@ -11,6 +11,9 @@ TagManager:
   - BlueBison
   - From
   - To
+  - desertSpawner
+  - crystalSpawner
+  - tropicalSpawner
   layers:
   - Default
   - TransparentFX
@@ -25,10 +28,10 @@ TagManager:
   - BisonIgnore
   - Players
   - Bison
-  - 
-  - 
-  - 
-  - 
+  - Hills
+  - HiddenUI
+  - BisonBound
+  - RealPostProcessing
   - 
   - 
   - 
@@ -47,4 +50,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: TopUI
+    uniqueID: 1442109903
+    locked: 0
+  - name: BottomUI
+    uniqueID: 1855847009
     locked: 0

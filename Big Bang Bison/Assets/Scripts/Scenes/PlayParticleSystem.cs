@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PlayParticleSystem : MonoBehaviour
 {
-    private ParticleSystem ps;
-    ParticleSystem.MainModule main;
+    public ParticleSystem psCurrent;
+    ParticleSystem.MainModule mainPS;
     public bool isBlue;
     public bool active;
     public bool medium;
-    public int mediumEmissionRate;
-    public int largeEmissionRate;
+    //public int mediumEmissionRate;
+    //public int largeEmissionRate;
     public GameObject blueBison;
     public GameObject redBison;
     private Color blue;
@@ -20,13 +20,13 @@ public class PlayParticleSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ps = GetComponent<ParticleSystem>();
-        main = ps.main;
+        psCurrent = GetComponent<ParticleSystem>();
+        mainPS = psCurrent.main;
         isBlue = true;
         active = false;
         medium = true;
-        blue = blueBison.GetComponentInChildren<SkinnedMeshRenderer>().sharedMaterial.color;
-        red = redBison.GetComponentInChildren<SkinnedMeshRenderer>().sharedMaterial.color;
+        blue = blueBison.GetComponentInChildren<MeshRenderer>().sharedMaterial.color;
+        red = redBison.GetComponentInChildren<MeshRenderer>().sharedMaterial.color;
     }
 
     // Update is called once per frame
@@ -36,14 +36,14 @@ public class PlayParticleSystem : MonoBehaviour
         {
             if (isBlue)
             {
-                main.startColor = blue;
+                mainPS.startColor = blue;
             }
             else
             {
-                main.startColor = red;
+                mainPS.startColor = red;
             }
 
-            var emission = ps.emission;
+            /*var emission = psCurrent.emission;
             if (medium)
             {
                 
@@ -52,9 +52,9 @@ public class PlayParticleSystem : MonoBehaviour
             else
             {
                 emission.rateOverTime = largeEmissionRate;
-            }
+            }*/
 
-            ps.Play();
+            psCurrent.Play();
             active = false;
         }
     }

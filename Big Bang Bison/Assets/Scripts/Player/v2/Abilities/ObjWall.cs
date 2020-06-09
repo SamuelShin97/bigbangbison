@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ObjWall : MonoBehaviour
 {
-    private float timerSpeed = 2f;
     private float speed = 2f;
     private float elapsed;
     List<Rigidbody> rgbBison = new List<Rigidbody>();
@@ -13,6 +12,7 @@ public class ObjWall : MonoBehaviour
     private void Start()
     {
         Target = GetComponent<Transform>();
+        
     }
     // Update is called once per frame
     void Update()
@@ -22,9 +22,17 @@ public class ObjWall : MonoBehaviour
             transform.Translate(0, speed * Time.deltaTime, 0);
         }
         elapsed += Time.deltaTime;
-        if (elapsed > 6)
+        if (elapsed > 10)
         {
             Destroy(this.gameObject);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            Physics.IgnoreCollision(collision.gameObject.GetComponent<CapsuleCollider>(), GetComponent<BoxCollider>());
         }
     }
 }

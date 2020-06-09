@@ -10,19 +10,24 @@ public class KeepScore : MonoBehaviour
     public int bluePoints;
     public int redPoints;
     
+
     // Start is called before the first frame update
     void Start()
     {
-        blueText.text = "Blue Points: 0";
-        redText.text = "Red Points: 0";
+        blueText.text = "0";
+        redText.text = "0";
         bluePoints = 0;
         redPoints = 0;
+        PlayerPrefs.SetInt("BlueScore", bluePoints);
+        PlayerPrefs.SetInt("RedScore", redPoints);
     }
 
     // Update is called once per frame
     void Update()
     {
-        blueText.text = "Blue Points: " + bluePoints.ToString();
-        redText.text = "Red Points: " + redPoints.ToString();
+        blueText.text =  bluePoints.ToString();
+        redText.text =  redPoints.ToString();
+        PlayerPrefs.SetInt("BlueScore", bluePoints);
+        PlayerPrefs.SetInt("RedScore", redPoints);
     }
 }

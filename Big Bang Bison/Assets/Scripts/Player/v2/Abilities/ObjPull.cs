@@ -5,24 +5,27 @@ using UnityEngine;
 public class ObjPull : MonoBehaviour
 {
     private float timerSpeed = 2f;
-    public float forceFactro = 600f;
+    public float forceFactro = 900f;
     private float elapsed;
     List<Rigidbody> rgbBison = new List<Rigidbody>();
     Transform Target;
+    
 
     private void Start()
     {
         Target = GetComponent<Transform>();
+        
     }
     // Update is called once per frame
     void Update()
     {
+        
         foreach (Rigidbody rgbBis in rgbBison)
         {
             rgbBis.AddForce((Target.position - rgbBis.position) * forceFactro * Time.fixedDeltaTime);
         }
         elapsed += Time.deltaTime;
-        if (elapsed > 3)
+        if (elapsed > 5)
         {
             Destroy(this.gameObject);
         }

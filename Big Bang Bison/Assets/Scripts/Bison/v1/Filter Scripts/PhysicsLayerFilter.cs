@@ -33,4 +33,19 @@ public class PhysicsLayerFilter : ContextFilter
 
         return filtered;
     }
+
+    public override List<Transform> Filter(OnlineHerdAgent agent, List<Transform> original)
+    {
+        List<Transform> filtered = new List<Transform>(); // the list to return
+
+        foreach (Transform item in original) // for each transform
+        {
+            if (mask == (mask | (1 << item.gameObject.layer))) // if the gameObject is on the right layer
+            {
+                filtered.Add(item); // add it to the filtered list
+            }
+        }
+
+        return filtered;
+    }
 }

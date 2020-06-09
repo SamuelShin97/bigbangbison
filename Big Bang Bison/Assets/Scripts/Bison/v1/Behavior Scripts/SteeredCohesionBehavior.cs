@@ -41,4 +41,25 @@ public class SteeredCohesionBehavior : FilteredHerdBehavior
 
         return cohesionMove;
     }
+
+    public override Vector3 CalculateMove(OnlineHerdAgent agent, List<Transform> context, OnlineHerd herd)
+    {
+        // if no neighbors return no adjustment
+        if (context.Count == 0) return Vector3.zero;
+
+        // add all points together and average
+        Vector3 cohesionMove = Vector3.zero;
+        List<Transform> filterContext = (filter == null) ? context : filter.Filter(agent, context); // this is a filtered behavior
+        foreach (Transform item in filterContext)
+        {
+            cohesionMove += item.position;
+        }
+        cohesionMove /= context.Count; // average
+
+        // create offset from agent position, the actual move of the agent
+        cohesionMove -= agent.transform.position;
+        cohesionMove = Vector3.SmoothDamp(agent.transform.forward, cohesionMove, ref currentVelocity, agentSmoothTime); // this is what makes this "smoothed"
+
+        return cohesionMove;
+    }
 }

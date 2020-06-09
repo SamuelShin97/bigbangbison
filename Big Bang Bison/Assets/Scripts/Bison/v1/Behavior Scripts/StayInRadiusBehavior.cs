@@ -26,4 +26,13 @@ public class StayInRadiusBehavior : HerdBehavior
 
         return centerOffset * t * t * t; // stronger the further from the center
     }
+
+    public override Vector3 CalculateMove(OnlineHerdAgent agent, List<Transform> context, OnlineHerd herd)
+    {
+        Vector3 centerOffset = center - agent.transform.position;
+        float t = centerOffset.magnitude / radius;
+        if (t < 0.95) return Vector3.zero; // if within 95% of the circle, don't move towards the center
+
+        return centerOffset * t * t * t; // stronger the further from the center
+    }
 }

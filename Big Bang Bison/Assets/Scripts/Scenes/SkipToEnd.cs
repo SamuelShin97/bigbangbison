@@ -16,7 +16,7 @@ public class SkipToEnd : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.N))
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(3);
         }
     }
 }

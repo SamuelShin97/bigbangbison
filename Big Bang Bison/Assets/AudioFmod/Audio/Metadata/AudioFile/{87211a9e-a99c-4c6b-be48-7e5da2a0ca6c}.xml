@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{87211a9e-a99c-4c6b-be48-7e5da2a0ca6c}">
+		<property name="assetPath">
+			<value>462654__vhschool2019__foot-stamp.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>4.378729166666667</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b427d112-e79d-44d1-b0c8-eecb1a7b5d4c}</destination>
+		</relationship>
+	</object>
+</objects>
