@@ -1,10 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Push : MonoBehaviour
 {
+    //slider
+    public Slider slider;
     
+
     public float forceFactro = 200f;
 
     public int PlayerNum;
@@ -52,6 +56,7 @@ public class Push : MonoBehaviour
         {
             coolDowns -= Time.deltaTime;
             SpawnPoint.gameObject.SetActive(false);
+            slider.value = calSliderVal();
         }
     }
 
@@ -75,5 +80,9 @@ public class Push : MonoBehaviour
             Vector3 teleportControlSpeed = new Vector3(0f, 0f, translationZ) * speed * Time.deltaTime;
             gameObject.transform.Translate(teleportControlSpeed);
         }
+    }
+    float calSliderVal()
+    {
+        return (coolDowns / coolDownDuration);
     }
 }

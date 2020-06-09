@@ -14,9 +14,9 @@ public class SkipToGameScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.N) || Input.GetButtonDown("XboxSubmit"))
-        {
-            SceneManager.LoadScene(2);
-        }
+        //if (Input.GetKeyDown(KeyCode.N) || Input.GetButtonDown("XboxSubmit"))
+       // {
+         //   SceneManager.LoadScene(2);
+        //}
     }
 }

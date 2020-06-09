@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="ParameterPreset" id="{0528b022-e081-49f3-8d6c-aa91fed14e16}">
+		<property name="name">
+			<value>Time_Remaining</value>
+		</property>
+		<relationship name="folder">
+			<destination>{9b938c80-fac1-4f2b-99b3-cb2897b07ee6}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{2ccbad97-4a2b-49ff-870b-9961169765c2}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{2ccbad97-4a2b-49ff-870b-9961169765c2}">
+		<property name="maximum">
+			<value>120</value>
+		</property>
+		<property name="initialValue">
+			<value>120</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

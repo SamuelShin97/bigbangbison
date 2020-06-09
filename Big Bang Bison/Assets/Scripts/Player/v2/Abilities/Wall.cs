@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Wall : MonoBehaviour
 {
+    public Slider slider;
 
     public int PlayerNum;
     public float speed;
@@ -50,6 +52,7 @@ public class Wall : MonoBehaviour
         {
             coolDowns -= Time.deltaTime;
             SpawnPoint.gameObject.SetActive(false);
+            slider.value = calSliderVal();
         }
     }
 
@@ -76,13 +79,9 @@ public class Wall : MonoBehaviour
             gameObject.transform.Translate(teleportControlSpeed);
         }
     }
-
-    /*private void OnDrawGizmos()
+    float calSliderVal()
     {
-        if (showGizmos)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(SpawnPoint.position, AoeRadius);
-        }
-    }*/
+        return (coolDowns / coolDownDuration);
+    }
+
 }

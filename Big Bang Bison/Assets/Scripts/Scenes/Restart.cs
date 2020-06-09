@@ -14,9 +14,16 @@ public class Restart : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("XboxSubmit"))
+        /*if (Input.GetButton("XboxSubmit"))
         {
-            SceneManager.LoadScene(0);
-        }
+            Debug.Log("restart game1");
+            RestartGame();
+        }*/
+    }
+
+    public void RestartGame()
+    {
+        Debug.Log("restart game2");
+        SceneManager.LoadScene(0);
     }
 }

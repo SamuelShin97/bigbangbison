@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="ParameterPreset" id="{3ebf32a3-df19-400b-8d87-3dc69d571db5}">
+		<property name="name">
+			<value>timeRemainingC</value>
+		</property>
+		<relationship name="folder">
+			<destination>{9b938c80-fac1-4f2b-99b3-cb2897b07ee6}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{25e2e7a0-6716-413a-a7bc-7e1db6047a87}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{25e2e7a0-6716-413a-a7bc-7e1db6047a87}">
+		<property name="minimum">
+			<value>-10</value>
+		</property>
+		<property name="maximum">
+			<value>120</value>
+		</property>
+		<property name="initialValue">
+			<value>120</value>
+		</property>
+	</object>
+</objects>

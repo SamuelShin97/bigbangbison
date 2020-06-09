@@ -18,4 +18,6 @@ using UnityEngine;
 public abstract class ContextFilter : ScriptableObject
 {
     public abstract List<Transform> Filter(HerdAgent agent, List<Transform> original);
+
+    public abstract List<Transform> Filter(OnlineHerdAgent agent, List<Transform> original);
 }

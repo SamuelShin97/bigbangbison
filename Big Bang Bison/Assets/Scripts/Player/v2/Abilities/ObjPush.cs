@@ -5,7 +5,7 @@ using UnityEngine;
 public class ObjPush : MonoBehaviour
 {
     private float timerSpeed = 2f;
-    public float forceFactro = 600f;
+    public float forceFactro;
     private float elapsed;
     List<Rigidbody> rgbBison = new List<Rigidbody>();
     Transform Target;
@@ -19,10 +19,10 @@ public class ObjPush : MonoBehaviour
     {
         foreach (Rigidbody rgbBis in rgbBison)
         {
-            rgbBis.AddForce((rgbBis.position - Target.position) * forceFactro * Time.fixedDeltaTime);
+            rgbBis.AddForce((rgbBis.position - Target.position) * forceFactro);
         }
         elapsed += Time.deltaTime;
-        if (elapsed > 3)
+        if (elapsed > 2)
         {
             Destroy(this.gameObject);
         }

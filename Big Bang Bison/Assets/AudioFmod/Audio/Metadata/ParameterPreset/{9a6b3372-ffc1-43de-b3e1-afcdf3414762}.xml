@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="ParameterPreset" id="{9a6b3372-ffc1-43de-b3e1-afcdf3414762}">
+		<property name="name">
+			<value>keepgoing</value>
+		</property>
+		<relationship name="folder">
+			<destination>{9b938c80-fac1-4f2b-99b3-cb2897b07ee6}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{33b68a1f-ebdc-4b83-9ca7-62752b94af5a}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{33b68a1f-ebdc-4b83-9ca7-62752b94af5a}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

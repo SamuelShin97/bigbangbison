@@ -14,7 +14,7 @@ public class SkipToEnd : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.N) || Input.GetButtonDown("XboxStart"))
+        if (Input.GetKeyDown(KeyCode.N))
         {
             SceneManager.LoadScene(3);
         }

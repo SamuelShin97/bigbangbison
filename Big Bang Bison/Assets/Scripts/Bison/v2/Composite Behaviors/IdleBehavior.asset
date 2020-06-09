@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: IdleBehavior
   m_EditorClassIdentifier: 
   behaviors:
-  - {fileID: 11400000, guid: 2b00dca9d3fd60b4b862dfe8e6fe4160, type: 2}
-  - {fileID: 11400000, guid: 2d81f3dbc077fec4590ed16dad3b82c2, type: 2}
-  - {fileID: 11400000, guid: f1e5ced081d333d4aaa6edc5daffe339, type: 2}
+  - {fileID: 11400000, guid: b3c15d661e7416745874d2fe0a87ca17, type: 2}
+  - {fileID: 11400000, guid: 58c87bf08e4d8024480059feaae2c431, type: 2}
+  - {fileID: 11400000, guid: 34f8e70f7b4183e4ba4d60459f8a2523, type: 2}
   weights:
+  - 4
+  - 2
   - 3
-  - 1
-  - 0.5

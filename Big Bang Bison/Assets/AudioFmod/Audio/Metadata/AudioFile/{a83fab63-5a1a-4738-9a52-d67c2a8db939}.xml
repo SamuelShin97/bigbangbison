@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{a83fab63-5a1a-4738-9a52-d67c2a8db939}">
+		<property name="assetPath">
+			<value>horse-02.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.42016666666666669</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b427d112-e79d-44d1-b0c8-eecb1a7b5d4c}</destination>
+		</relationship>
+	</object>
+</objects>

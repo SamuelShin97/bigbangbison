@@ -1200,6 +1200,7 @@ GameObject:
   - component: {fileID: 6710434481018509668}
   - component: {fileID: 2776220491721232345}
   - component: {fileID: 6001581696940565766}
+  - component: {fileID: 114200897136816766}
   m_Layer: 12
   m_Name: Bison v2
   m_TagString: Bison
@@ -1279,5 +1280,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3fce5b7f65a0a346b68c234a3133f4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundMid: 
+  soundFull: 
+  nearPlayer: 0
+  floating: 0
   agentBody: {fileID: 0}
   state: 0
+  inHill: 0
+  inHerdBox: 0
+  growth: 0
+  scoreable: 0
+  mediumMaturity: 0
+  fullMaturity: 0
+  glow: {fileID: 0}
+  idleTimer: 0
+--- !u!114 &114200897136816766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6452640571077127983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c072cae9cbd04df42898e3eb4407ddef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

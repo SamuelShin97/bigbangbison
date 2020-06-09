@@ -19,5 +19,7 @@ using UnityEngine;
  */
 public abstract class HerdBehavior : ScriptableObject
 {
-    public abstract Vector3 CalculateMove (HerdAgent agent, List<Transform> context, Herd herd);
+    public abstract Vector3 CalculateMove(HerdAgent agent, List<Transform> context, Herd herd);
+
+    public abstract Vector3 CalculateMove(OnlineHerdAgent agent, List<Transform> context, OnlineHerd herd);
 }

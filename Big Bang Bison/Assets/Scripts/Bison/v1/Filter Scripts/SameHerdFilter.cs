@@ -31,4 +31,20 @@ public class SameHerdFilter : ContextFilter
         }
         return filtered;
     }
+
+    // Looks at  all objects in the original context, then returns a new list with only the filtered objects
+    public override List<Transform> Filter(OnlineHerdAgent agent, List<Transform> original)
+    {
+        List<Transform> filtered = new List<Transform>(); // list to return
+
+        foreach (Transform item in original)
+        {
+            HerdAgent itemAgent = item.GetComponent<HerdAgent>();
+            if (itemAgent != null && itemAgent.AgentHerd == agent.AgentHerd) // if this item is in the same herd
+            {
+                filtered.Add(item); // add it to the list
+            }
+        }
+        return filtered;
+    }
 }

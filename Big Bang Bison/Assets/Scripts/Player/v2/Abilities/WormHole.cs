@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WormHole : MonoBehaviour
 {
-    public int PlayerNum;
+    public Slider slider;
+    public int playerNum;
     public Transform powerLocation;
     //public bool showGizmos = false;
     public float AoERadius;
@@ -13,12 +15,14 @@ public class WormHole : MonoBehaviour
     public float minRange;
     public GameObject FromTeleporter;
     public GameObject ToTeleporter;
-    public bool fromIsDown;
-    public bool toIsDown;
-    public bool TelActivate = false;
+    
+    //public bool TelActivate = false;
+    private bool fromIsDown;
+    private bool toIsDown;
     private float speedCount = 2f;
     private float coolDowns = 0;
-    private string wall = "Ability";
+    private string abilityInput = "Ability";
+    
     public float coolDownDuration = 5;
     
 
@@ -28,24 +32,22 @@ public class WormHole : MonoBehaviour
         fromIsDown = false;
         toIsDown = false;
         powerLocation.gameObject.SetActive(false);
-        if (TelActivate)
-        {
-            wall = wall + PlayerNum;
-        }
+        abilityInput = abilityInput + playerNum;
+        
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        if (TelActivate && coolDowns <= 0)
+        if (coolDowns <= 0)
         {
             ////fjadkfjalksdjf;lkasdjflkasd;
-            if (Input.GetButton(wall) && coolDowns <= 0)
+            if (Input.GetButton(abilityInput) && coolDowns <= 0)
             {
                 PositionPowerLocation();
             }
-            if (Input.GetButtonUp(wall))
+            if (Input.GetButtonUp(abilityInput))
             {
                 
                 powerLocation.gameObject.SetActive(false);
@@ -59,7 +61,7 @@ public class WormHole : MonoBehaviour
                 {
                     GameObject from = Instantiate(ToTeleporter, new Vector3(powerLocation.position.x, 2f, powerLocation.position.z), Quaternion.Euler(0f, 0f, 0f));
                     from.transform.localScale = new Vector3(AoERadius * 2, 0.1f, AoERadius * 2);
-                    coolDowns -= Time.deltaTime;
+                    coolDowns = coolDownDuration;
                     toIsDown = true;
                     fromIsDown = false;
                     toIsDown = false;
@@ -72,6 +74,7 @@ public class WormHole : MonoBehaviour
         {
             coolDowns -= Time.deltaTime;
             powerLocation.gameObject.SetActive(false);
+            slider.value = calSliderVal();
         }
     }
 
@@ -98,12 +101,8 @@ public class WormHole : MonoBehaviour
         }
     }
 
-    /*private void OnDrawGizmos()
+    float calSliderVal()
     {
-        if (showGizmos)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(lookAt.position, AoERadius);
-        }
-    }*/
+        return (coolDowns / coolDownDuration);
+    }
 }
