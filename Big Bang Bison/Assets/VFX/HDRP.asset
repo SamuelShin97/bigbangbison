@@ -165,7 +165,7 @@ MonoBehaviour:
     msaaSampleCount: 1
     supportMotionVectors: 1
     supportRuntimeDebugDisplay: 1
-    supportDitheringCrossFade: 1
+    supportDitheringCrossFade: 0
     supportRayTracing: 0
     lightLoopSettings:
       cookieSize: 128
